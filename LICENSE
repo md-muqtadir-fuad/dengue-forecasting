@@ -19,3 +19,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## Additional Notes
+
+This project uses dependencies with various open-source licenses. 
+Please refer to individual package documentation for their respective licenses.
+
+Datasets used in this project may have separate licensing terms.
+Refer to the `data/` directory for dataset-specific documentation.
+
+If you use this project in research, please cite:
+```
+Fuad, M. M. (2026). Tactical vs. Strategic: A Generalizable Framework for 
+Horizon-Dependent Dengue Forecasting with a Case Study in Bangladesh.
+```
