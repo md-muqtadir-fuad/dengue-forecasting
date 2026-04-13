@@ -1,0 +1,49 @@
+Random Forest sensitivity run summary
+================================================================================
+Input file: ./data/raw/prime_dataset_model_input_with_purge.csv
+Ablation: no_population_density
+Seed: 42
+Target column: Log_NoOfDenguePatients
+Feature count: 20
+Horizon: 6
+Use district one-hot: True
+Use tuning: False
+
+Removed features / branches
+--------------------------------------------------------------------------------
+PopulationDensity
+
+Date windows from preprocessing split column
+--------------------------------------------------------------------------------
+train: 2017-04-01 00:00:00 -> 2021-02-01 00:00:00 (47 months)
+val: 2021-03-01 00:00:00 -> 2021-08-01 00:00:00 (6 months)
+purge: 2021-09-01 00:00:00 -> 2022-08-01 00:00:00 (12 months)
+test: 2022-09-01 00:00:00 -> 2023-12-01 00:00:00 (16 months)
+
+Features used
+--------------------------------------------------------------------------------
+denv4
+AvgTemp_lag_3
+MonthlyPrevailingWindDir_ENE
+Rainfall_lag_2
+MonthlyAvgSunshineHours_lag_1
+denv1_lag_1
+Humidity_lag_1
+District_BARISHAL
+District_BHOLA
+District_CHATTOGRAM
+District_COXS BAZAR
+District_DHAKA
+District_FARIDPUR
+District_JESSORE
+District_KHULNA
+District_MYMENSINGH
+District_RAJSHAHI
+District_SYLHET
+TargetMonth_sin
+TargetMonth_cos
+
+Note
+--------------------------------------------------------------------------------
+TargetMonth_sin and TargetMonth_cos are horizon-specific seasonal features derived from TargetDate.
+Target-month branch included: True

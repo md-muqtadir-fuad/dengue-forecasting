@@ -1,0 +1,14 @@
+{
+  "input_path": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "MLR/outputs",
+  "target_col": "Log_NoOfDenguePatients",
+  "district_col": "District",
+  "date_col": "Date",
+  "monthyear_col": "Month-year",
+  "split_col": "split",
+  "use_district_ohe": false,
+  "horizon": 6,
+  "random_state": 42,
+  "robust_cov_type": "HC3",
+  "outbreak_quantile": 0.9
+}

@@ -1,0 +1,12 @@
+Suggested manuscript wording
+
+Main figure caption:
+Sensitivity analysis of the Temporal Fusion Transformer (TFT) was conducted by comparing the full specification against four feature-ablation variants: no climate, no population density, no serotype, and no temporal features. Horizon-wise RMSE and MAE remained highly similar across all five specifications, indicating that the TFT performance was only modestly affected by individual feature-group removal. The full specification achieved test RMSE = 4111.035 and test MAE = 1286.682. Among the five runs, the lowest RMSE was obtained by No serotype, whereas the lowest MAE was obtained by No serotype. Overall, the ablation results suggest that TFT performance was relatively stable under these feature removals.
+
+Supplementary figure caption:
+Coverage@80 and mean interval width@80 were also compared across the five TFT sensitivity specifications. The uncertainty profiles remained broadly similar, indicating that the observed differences among the ablation runs were small not only for point error but also for interval behavior.
+
+Table recommendation:
+Use one compact supplementary table only:
+- overall test metrics (RMSE, MAE, CVRMSE, NRMSE, sMAPE, MASE) for all five specifications.
+No extra main-text table is necessary if the horizon-wise figure is shown.

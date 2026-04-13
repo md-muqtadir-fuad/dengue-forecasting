@@ -1,0 +1,11 @@
+{
+  "input": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "./XGBoost/outputs/sensitivity",
+  "target_col": "Log_NoOfDenguePatients",
+  "horizon": 6,
+  "use_district_ohe": true,
+  "fixed_config_json": "./XGBoost/outputs/xgb_best_params.json",
+  "seed_list": "42",
+  "ablation_names": "full,no_climate,no_serotype,no_temporal,no_population_density",
+  "random_state": 42
+}

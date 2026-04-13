@@ -1,0 +1,38 @@
+{
+  "input_path": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "CatBoost/outputs",
+  "target_col": "Log_NoOfDenguePatients",
+  "district_col": "District",
+  "date_col": "Date",
+  "monthyear_col": "Month-year",
+  "split_col": "split",
+  "use_district_cat": true,
+  "keep_object_features": true,
+  "horizon": 6,
+  "use_tuning": true,
+  "tuning_iter": 16,
+  "random_state": 42,
+  "require_purge_rows": true,
+  "blocked_features": [
+    "Year",
+    "Month_sin",
+    "Month_cos"
+  ],
+  "outbreak_q": 0.9,
+  "extreme_outbreak_q": 0.97,
+  "outbreak_weight": 5.0,
+  "extreme_outbreak_weight": 12.0,
+  "base_params": {
+    "loss_function": "RMSE",
+    "eval_metric": "RMSE",
+    "iterations": 3000,
+    "learning_rate": 0.03,
+    "depth": 6,
+    "l2_leaf_reg": 5.0,
+    "random_strength": 1.0,
+    "bootstrap_type": "Bayesian",
+    "bagging_temperature": 1.0,
+    "random_seed": 42,
+    "allow_writing_files": false
+  }
+}

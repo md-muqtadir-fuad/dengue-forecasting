@@ -1,0 +1,60 @@
+Temporal Fusion Transformer sensitivity run summary
+================================================================================
+Input file: data/raw/prime_dataset_model_input_with_purge.csv
+Ablation: no_temporal
+Seed: 42
+Target column: Log_NoOfDenguePatients
+Encoder length: 12
+Prediction length: 6
+Batch size: 64
+Use tuning: False
+Fixed config json: ./TFT/outputs/tft_best_config.json
+
+Date windows from preprocessing split column
+--------------------------------------------------------------------------------
+train: 2017-04-01 00:00:00 -> 2021-02-01 00:00:00 (47 months)
+val: 2021-03-01 00:00:00 -> 2021-08-01 00:00:00 (6 months)
+purge: 2021-09-01 00:00:00 -> 2022-08-01 00:00:00 (12 months)
+test: 2022-09-01 00:00:00 -> 2023-12-01 00:00:00 (16 months)
+
+Removed features / branches
+--------------------------------------------------------------------------------
+TargetMonth_sin
+TargetMonth_cos
+
+Fixed model config
+--------------------------------------------------------------------------------
+{
+  "hidden_size": 16,
+  "attention_head_size": 2,
+  "dropout": 0.05,
+  "hidden_continuous_size": 8,
+  "learning_rate": 0.01,
+  "gradient_clip_val": 0.01,
+  "batch_size": 64
+}
+
+Variable schema
+--------------------------------------------------------------------------------
+static_categoricals: ['District']
+static_reals: ['PopulationDensity']
+time_varying_known_reals: ['time_idx']
+time_varying_unknown_reals: ['Log_NoOfDenguePatients', 'denv4', 'AvgTemp_lag_3', 'MonthlyPrevailingWindDir_ENE', 'Rainfall_lag_2', 'MonthlyAvgSunshineHours_lag_1', 'denv1_lag_1', 'Humidity_lag_1']
+
+Features used
+--------------------------------------------------------------------------------
+PopulationDensity
+time_idx
+Log_NoOfDenguePatients
+denv4
+AvgTemp_lag_3
+MonthlyPrevailingWindDir_ENE
+Rainfall_lag_2
+MonthlyAvgSunshineHours_lag_1
+denv1_lag_1
+Humidity_lag_1
+
+Note
+--------------------------------------------------------------------------------
+TargetMonth_sin and TargetMonth_cos are known future covariates derived from each row's calendar month.
+For TFT no_temporal removes the target-month known-future branch, because source Year / Month_sin / Month_cos are already excluded in the main pipeline.

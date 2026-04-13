@@ -1,0 +1,28 @@
+{
+  "input_path": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "SVR/outputs",
+  "target_col": "Log_NoOfDenguePatients",
+  "district_col": "District",
+  "date_col": "Date",
+  "monthyear_col": "Month-year",
+  "split_col": "split",
+  "use_district_ohe": true,
+  "horizon": 6,
+  "use_tuning": true,
+  "tuning_iter": 24,
+  "random_state": 42,
+  "require_purge_rows": true,
+  "shap_max_background": 80,
+  "shap_max_samples": 120,
+  "shap_nsamples": 100,
+  "base_params": {
+    "kernel": "rbf",
+    "C": 10.0,
+    "epsilon": 0.05,
+    "gamma": "scale",
+    "cache_size": 1000,
+    "shrinking": true,
+    "tol": 0.001,
+    "max_iter": -1
+  }
+}

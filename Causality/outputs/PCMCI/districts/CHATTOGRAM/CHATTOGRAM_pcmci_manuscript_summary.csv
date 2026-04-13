@@ -1,0 +1,3 @@
+district,Causal Hypothesis,Method,Source Variable,Source Base Variable,Source Input Offset (Months),Target Variable,Target Base Variable,Target Input Offset (Months),Strongest PCMCI Lag (Months),Effective Total Lag (Months),p-value,Conclusion,Effect Value
+CHATTOGRAM,Avg. Temp (Lag 3) → Log(Dengue Cases),PCMCI,Avg. Temp (Lag 3),Avg. Temp,3,Log(Dengue Cases),Log(Dengue Cases),0,6,9,0.114,Not Sig.,0.2382896084091314
+CHATTOGRAM,Rainfall (Lag 2) → Log(Dengue Cases),PCMCI,Rainfall (Lag 2),Rainfall,2,Log(Dengue Cases),Log(Dengue Cases),0,5,7,0.028,Sig. Non-Linear,0.2870567444214619

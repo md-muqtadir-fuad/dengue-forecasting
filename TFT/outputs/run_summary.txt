@@ -1,0 +1,43 @@
+Temporal Fusion Transformer run summary
+================================================================================
+Input file: data/raw/prime_dataset_model_input_with_purge.csv
+Target column: Log_NoOfDenguePatients
+Encoder length: 12
+Prediction length: 6
+Batch size: 64
+Use tuning: True
+
+Date windows from preprocessing split column
+--------------------------------------------------------------------------------
+train: 2017-04-01 00:00:00 -> 2021-02-01 00:00:00 (47 months)
+val: 2021-03-01 00:00:00 -> 2021-08-01 00:00:00 (6 months)
+purge: 2021-09-01 00:00:00 -> 2022-08-01 00:00:00 (12 months)
+test: 2022-09-01 00:00:00 -> 2023-12-01 00:00:00 (16 months)
+
+Variable schema
+--------------------------------------------------------------------------------
+static_categoricals: ['District']
+static_reals: ['PopulationDensity']
+time_varying_known_reals: ['time_idx', 'TargetMonth_sin', 'TargetMonth_cos']
+time_varying_unknown_reals: ['Log_NoOfDenguePatients', 'denv4', 'AvgTemp_lag_3', 'MonthlyPrevailingWindDir_ENE', 'Rainfall_lag_2', 'MonthlyAvgSunshineHours_lag_1', 'denv1_lag_1', 'Humidity_lag_1']
+
+Features used
+--------------------------------------------------------------------------------
+PopulationDensity
+time_idx
+TargetMonth_sin
+TargetMonth_cos
+Log_NoOfDenguePatients
+denv4
+AvgTemp_lag_3
+MonthlyPrevailingWindDir_ENE
+Rainfall_lag_2
+MonthlyAvgSunshineHours_lag_1
+denv1_lag_1
+Humidity_lag_1
+
+Note
+--------------------------------------------------------------------------------
+TargetMonth_sin and TargetMonth_cos are known future covariates derived from each row's calendar month.
+Year, Month_sin, and Month_cos from the source row are intentionally excluded.
+Validation and test evaluation are filtered by TARGET split after rolling decoder expansion, so all eligible target months are retained.

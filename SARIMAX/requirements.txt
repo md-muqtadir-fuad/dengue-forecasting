@@ -1,0 +1,24 @@
+# Works Python 3.8.0
+# Core numeric stack (pin NumPy first)
+numpy==1.18.5          # 2020-06-04
+scipy==1.5.4           # 2020-11-04
+pandas==1.1.5          # 2020-12-07
+matplotlib==3.3.4      # 2021-01-28
+
+# Modeling
+statsmodels==0.12.2    # 2021-02-02
+pmdarima==1.8.0        # 2020-12-02  (works with numpy 1.18.x & statsmodels 0.12.2)
+
+# Scikit-learn + deps
+scikit-learn==0.23.2   # 2020-08-04
+joblib==1.0.1          # 2021-02-09
+threadpoolctl==2.1.0   # 2020-05-29
+
+# Small deps
+patsy==0.5.1           # 2018-10-28
+python-dateutil==2.8.2 # 2021-07-08
+pytz==2020.5           # 2020-12-24
+
+# Build helper (only needed if wheels unavailable)
+Cython==0.29.17        # 2020-07-08
+seaborn==0.11.1

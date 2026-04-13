@@ -1,0 +1,3 @@
+series,n_districts,stationary_count,non_stationary_count
+Log1p Transformed,11,4,7
+First-Order Differenced,11,11,0

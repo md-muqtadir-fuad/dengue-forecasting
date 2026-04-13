@@ -1,0 +1,23 @@
+PCMCI run outputs
+================================================================================
+Input file: ./data/raw/prime_dataset_model_input_with_purge.csv
+Mode: district
+Target: Log_NoOfDenguePatients
+Predictors: ['AvgTemp_lag_3', 'Rainfall_lag_2']
+Controls: []
+Variables included in PCMCI graph: ['Log_NoOfDenguePatients', 'AvgTemp_lag_3', 'Rainfall_lag_2']
+tau_min=1, tau_max=6
+pc_alpha=0.05, alpha_level=0.05, fdr_method=none
+
+Main outputs:
+- pcmci_manuscript_summary.csv or pcmci_manuscript_summary_fisher_combined.csv
+- pcmci_links_long.csv or pcmci_links_long_all_districts.csv
+- variable_lag_metadata.csv
+- lag_interpretation_note.txt
+- graph figures
+- target p-value and effect-value heatmaps
+
+Interpretation note:
+- If a predictor is already lagged in the input file (for example AvgTemp_lag_3),
+  then PCMCI lag is not the full temporal offset back to the original raw series.
+- See 'Effective Total Lag (Months)' in the manuscript summary outputs.

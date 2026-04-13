@@ -1,0 +1,27 @@
+{
+  "input_path": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "stacked-LSTM/outputs",
+  "target_col": "Log_NoOfDenguePatients",
+  "district_col": "District",
+  "date_col": "Date",
+  "monthyear_col": "Month-year",
+  "split_col": "split",
+  "use_district_ohe": true,
+  "horizon": 6,
+  "lookback": 6,
+  "epochs": 300,
+  "batch_size": 32,
+  "random_state": 42,
+  "require_purge_rows": true,
+  "use_tuning": true,
+  "tuning_iter": 12,
+  "permutation_sample_size": 256,
+  "loss_name": "huber",
+  "base_model_config": {
+    "lstm_units_1": 64,
+    "lstm_units_2": 32,
+    "dense_units": 32,
+    "dropout": 0.2,
+    "learning_rate": 0.001
+  }
+}

@@ -1,0 +1,31 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:           y_future_log   R-squared:                       0.206
+Model:                            OLS   Adj. R-squared:                  0.197
+Method:                 Least Squares   F-statistic:                     22.85
+Date:                Mon, 13 Apr 2026   Prob (F-statistic):           1.99e-20
+Time:                        02:53:33   Log-Likelihood:                -869.94
+No. Observations:                 451   AIC:                             1752.
+Df Residuals:                     445   BIC:                             1777.
+Df Model:                           5                                         
+Covariance Type:                  HC3                                         
+=====================================================================================
+                        coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------
+const              -722.5057    101.592     -7.112      0.000    -921.623    -523.388
+Year                  0.3582      0.050      7.115      0.000       0.260       0.457
+Month_sin             0.7391      0.118      6.278      0.000       0.508       0.970
+Month_cos             0.1384      0.104      1.334      0.182      -0.065       0.342
+PopulationDensity     0.0002   3.81e-05      4.613      0.000       0.000       0.000
+denv1_lag_1           0.0239      0.006      3.724      0.000       0.011       0.037
+==============================================================================
+Omnibus:                       78.580   Durbin-Watson:                   0.310
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              116.296
+Skew:                           1.180   Prob(JB):                     5.58e-26
+Kurtosis:                       3.788   Cond. No.                     7.26e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 7.26e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.

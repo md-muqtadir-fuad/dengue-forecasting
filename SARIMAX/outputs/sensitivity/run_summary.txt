@@ -1,0 +1,17 @@
+SARIMAX sensitivity run summary
+================================================================================
+Base script: ./SARIMAX/sarimax_district.py
+Fixed baseline config JSON: ./SARIMAX/outputs/run_config.json
+Output dir: SARIMAX\outputs\sensitivity
+
+Sensitivity principle
+--------------------------------------------------------------------------------
+SARIMAX does not use the exogenous feature-group pipeline used by the ML/DL models.
+So sensitivity is done through SARIMAX specification changes rather than fake feature ablations.
+
+Experiments
+--------------------------------------------------------------------------------
+full: order=(1, 1, 1), seasonal_order=(0, 1, 1, 12), use_order_search=True | Baseline SARIMAX specification from the main run config.
+fixed_order_only: order=(1, 1, 1), seasonal_order=(0, 1, 1, 12), use_order_search=False | Same baseline order and seasonal order, but no order search.
+no_seasonal: order=(1, 1, 1), seasonal_order=(0, 0, 0, 0), use_order_search=False | Removes the seasonal SARIMA component and disables order search.
+simpler_nonseasonal: order=(1, 1, 0), seasonal_order=(0, 0, 0, 0), use_order_search=False | Uses a simpler non-seasonal ARIMA specification with no seasonal component.

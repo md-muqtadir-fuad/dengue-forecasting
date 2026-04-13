@@ -1,0 +1,104 @@
+{
+  "h1": {
+    "best_iteration": 1785,
+    "params": {
+      "iterations": 1800,
+      "learning_rate": 0.05,
+      "depth": 7,
+      "l2_leaf_reg": 5.0,
+      "loss_function": "RMSE",
+      "random_seed": 42,
+      "random_strength": 2.0,
+      "eval_metric": "RMSE",
+      "bagging_temperature": 1.0,
+      "allow_writing_files": false,
+      "bootstrap_type": "Bayesian"
+    },
+    "outbreak_threshold": 80.00000000000001
+  },
+  "h2": {
+    "best_iteration": 1170,
+    "params": {
+      "iterations": 1200,
+      "learning_rate": 0.05,
+      "depth": 7,
+      "l2_leaf_reg": 5.0,
+      "loss_function": "RMSE",
+      "random_seed": 42,
+      "random_strength": 4.0,
+      "eval_metric": "RMSE",
+      "bagging_temperature": 1.0,
+      "allow_writing_files": false,
+      "bootstrap_type": "Bayesian"
+    },
+    "outbreak_threshold": 84.60000000000001
+  },
+  "h3": {
+    "best_iteration": 1478,
+    "params": {
+      "iterations": 3500,
+      "learning_rate": 0.03,
+      "depth": 7,
+      "l2_leaf_reg": 10.0,
+      "loss_function": "RMSE",
+      "random_seed": 42,
+      "random_strength": 2.0,
+      "eval_metric": "RMSE",
+      "bagging_temperature": 1.0,
+      "allow_writing_files": false,
+      "bootstrap_type": "Bayesian"
+    },
+    "outbreak_threshold": 85.69999999999997
+  },
+  "h4": {
+    "best_iteration": 2287,
+    "params": {
+      "iterations": 3500,
+      "learning_rate": 0.02,
+      "depth": 6,
+      "l2_leaf_reg": 15.0,
+      "loss_function": "RMSE",
+      "random_seed": 42,
+      "random_strength": 4.0,
+      "eval_metric": "RMSE",
+      "bagging_temperature": 1.0,
+      "allow_writing_files": false,
+      "bootstrap_type": "Bayesian"
+    },
+    "outbreak_threshold": 86.0
+  },
+  "h5": {
+    "best_iteration": 716,
+    "params": {
+      "iterations": 800,
+      "learning_rate": 0.03,
+      "depth": 5,
+      "l2_leaf_reg": 5.0,
+      "loss_function": "RMSE",
+      "random_seed": 42,
+      "random_strength": 2.0,
+      "eval_metric": "RMSE",
+      "bagging_temperature": 1.0,
+      "allow_writing_files": false,
+      "bootstrap_type": "Bayesian"
+    },
+    "outbreak_threshold": 86.90000000000006
+  },
+  "h6": {
+    "best_iteration": 1245,
+    "params": {
+      "iterations": 2500,
+      "learning_rate": 0.03,
+      "depth": 4,
+      "l2_leaf_reg": 5.0,
+      "loss_function": "RMSE",
+      "random_seed": 42,
+      "random_strength": 1.0,
+      "eval_metric": "RMSE",
+      "bagging_temperature": 2.0,
+      "allow_writing_files": false,
+      "bootstrap_type": "Bayesian"
+    },
+    "outbreak_threshold": 94.0
+  }
+}

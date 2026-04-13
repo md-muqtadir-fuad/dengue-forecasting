@@ -1,0 +1,33 @@
+{
+  "input_path": "data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "TFT/outputs",
+  "target_col": "Log_NoOfDenguePatients",
+  "district_col": "District",
+  "date_col": "Date",
+  "monthyear_col": "Month-year",
+  "split_col": "split",
+  "time_idx_col": "time_idx",
+  "max_prediction_length": 6,
+  "max_encoder_length": 12,
+  "batch_size": 64,
+  "max_epochs": 150,
+  "random_state": 42,
+  "require_purge_rows": true,
+  "use_tuning": true,
+  "tuning_iter": 10,
+  "accelerator": "auto",
+  "devices": 1,
+  "gradient_clip_val": 0.1,
+  "quantiles": [
+    0.1,
+    0.5,
+    0.9
+  ],
+  "base_model_config": {
+    "hidden_size": 16,
+    "attention_head_size": 4,
+    "dropout": 0.1,
+    "hidden_continuous_size": 8,
+    "learning_rate": 0.03
+  }
+}

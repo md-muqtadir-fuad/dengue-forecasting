@@ -1,0 +1,38 @@
+CatBoost sensitivity run summary
+================================================================================
+Input file: ./data/raw/prime_dataset_model_input_with_purge.csv
+Fixed config JSON: ./CATBoost/outputs/catboost_best_params.json
+Ablation: full
+Seed: 42
+Feature count: 9
+Categorical feature count: 1
+Horizon: 6
+Use district categorical feature: True
+Keep object features: True
+Blocked features: ['Year', 'Month_sin', 'Month_cos']
+Use tuning: False
+Target temporal branch enabled: True
+Removed features: []
+
+Date windows from preprocessing split column
+--------------------------------------------------------------------------------
+train: 2017-04-01 00:00:00 -> 2021-02-01 00:00:00 (47 months)
+val: 2021-03-01 00:00:00 -> 2021-08-01 00:00:00 (6 months)
+purge: 2021-09-01 00:00:00 -> 2022-08-01 00:00:00 (12 months)
+test: 2022-09-01 00:00:00 -> 2023-12-01 00:00:00 (16 months)
+
+Features used
+--------------------------------------------------------------------------------
+denv4
+AvgTemp_lag_3
+PopulationDensity
+MonthlyPrevailingWindDir_ENE
+Rainfall_lag_2
+MonthlyAvgSunshineHours_lag_1
+denv1_lag_1
+Humidity_lag_1
+District
+
+Categorical features
+--------------------------------------------------------------------------------
+District

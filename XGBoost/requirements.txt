@@ -1,0 +1,12 @@
+# Data Science Core
+numpy>=1.21.0
+pandas>=1.3.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Modeling & Machine Learning
+xgboost>=1.5.0
+scikit-learn>=1.0.0
+shap>=0.40.0

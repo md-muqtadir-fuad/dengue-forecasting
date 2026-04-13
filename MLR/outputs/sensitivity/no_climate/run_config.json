@@ -1,0 +1,24 @@
+{
+  "input_path": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "MLR/outputs/sensitivity",
+  "target_col": "Log_NoOfDenguePatients",
+  "district_col": "District",
+  "date_col": "Date",
+  "monthyear_col": "Month-year",
+  "split_col": "split",
+  "use_district_ohe": false,
+  "horizon": 6,
+  "random_state": 42,
+  "robust_cov_type": "HC3",
+  "outbreak_quantile": 0.9,
+  "ablation_name": "no_climate",
+  "base_feature_count": 11,
+  "feature_count_after_ablation": 6,
+  "removed_features": [
+    "AvgTemp_lag_3",
+    "MonthlyPrevailingWindDir_ENE",
+    "Rainfall_lag_2",
+    "MonthlyAvgSunshineHours_lag_1",
+    "Humidity_lag_1"
+  ]
+}

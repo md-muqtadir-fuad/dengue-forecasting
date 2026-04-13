@@ -1,0 +1,528 @@
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: invalid value encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tools\eval_measures.py:406: RuntimeWarning: divide by zero encountered in log
+  return -2.0 * llf + np.log(nobs) * df_modelwc

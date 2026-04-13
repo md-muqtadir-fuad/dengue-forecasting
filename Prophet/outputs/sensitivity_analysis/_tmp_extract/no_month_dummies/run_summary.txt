@@ -1,0 +1,31 @@
+Prophet grouped-district run summary
+================================================================================
+Input file: ./data/raw/prime_dataset_model_input_with_purge.csv
+Target column: Log_NoOfDenguePatients
+Horizon: 6
+Min history months: 12
+Use month dummies: False
+Seasonality mode: additive
+Changepoint prior scale: 0.05
+Seasonality prior scale: 10.0
+Use tuning: False
+Interval width: 0.95
+Fixed tuning CSV: ./Prophet/outputs/prophet_tuning_results.csv
+Ablation names: full,no_month_dummies
+
+Date windows from preprocessing split column
+--------------------------------------------------------------------------------
+train: 2017-04-01 00:00:00 -> 2021-02-01 00:00:00 (47 months)
+val: 2021-03-01 00:00:00 -> 2021-08-01 00:00:00 (6 months)
+purge: 2021-09-01 00:00:00 -> 2022-08-01 00:00:00 (12 months)
+test: 2022-09-01 00:00:00 -> 2023-12-01 00:00:00 (16 months)
+
+Model notes
+--------------------------------------------------------------------------------
+One Prophet model is refit per district and source date (rolling-origin evaluation).
+Monthly forecasts use freq='MS'.
+Built-in yearly seasonality is disabled and month dummy regressors are used instead for monthly data.
+A reference month dummy is dropped to avoid perfect multicollinearity.
+Per-district final-train diagnostics, coefficients, and component plots are exported separately.
+For sensitivity runs, district-level tuned Prophet parameters can be frozen from a prior tuning table.
+The honest Prophet-specific sensitivity factor here is whether month-dummy regressors are enabled.

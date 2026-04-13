@@ -1,0 +1,47 @@
+# Ignore sensitive/purchased data folders
+data/raw
+data/output
+*.csv
+*.xlsx
+*.parquet
+
+#env
+*venv38
+*venv
+env
+*zip
+
+# Ignore datasets
+*.csv
+!data/dataset/synthetic-dataset.csv
+!*summary.csv
+!*per_horizon.csv
+!*split_manifest.csv
+
+# Ignore saved models
+*.joblib
+*.json
+!*best_params.json
+!run_config.json
+*.ckpt
+*.keras
+*.yml
+*.yaml
+*.pkl
+*.pickle
+*.cbm
+*.npy
+*.zip
+
+# Ignore figures and plots
+*.pdf
+*.png
+*.jpg
+
+# Ignore large prediction outputs
+*predictions_long.csv
+*residuals_long.csv
+
+# Python cache
+__pycache__/
+*.pyc

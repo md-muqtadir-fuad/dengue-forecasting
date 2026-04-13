@@ -1,0 +1,21 @@
+{
+  "input_path": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "Prophet/outputs/sensitivity",
+  "target_col": "Log_NoOfDenguePatients",
+  "district_col": "District",
+  "date_col": "Date",
+  "monthyear_col": "Month-year",
+  "split_col": "split",
+  "horizon": 6,
+  "min_history_months": 12,
+  "interval_width": 0.95,
+  "changepoint_prior_scale": 0.05,
+  "seasonality_prior_scale": 10.0,
+  "seasonality_mode": "additive",
+  "use_month_dummies": true,
+  "use_tuning": false,
+  "random_state": 42,
+  "fixed_tuning_csv": "./Prophet/outputs/prophet_tuning_results.csv",
+  "ablation_names": "full,no_month_dummies",
+  "experiment": "full"
+}

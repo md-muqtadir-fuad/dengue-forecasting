@@ -1,0 +1,27 @@
+SARIMAX grouped district run summary
+================================================================================
+Input file: ./data/raw/prime_dataset_model_input_with_purge.csv
+Target column: Log_NoOfDenguePatients
+District column: District
+Date column: Date
+Horizon: 6
+Order: (1, 1, 1)
+Seasonal order: (0, 1, 1, 12)
+Use order search: True
+Min train points per district-origin: 24
+Max iterations per fit: 200
+Diagnostics lags: 24
+
+Date windows from preprocessing split column
+--------------------------------------------------------------------------------
+train: 2017-04-01 00:00:00 -> 2021-02-01 00:00:00 (47 months)
+val: 2021-03-01 00:00:00 -> 2021-08-01 00:00:00 (6 months)
+purge: 2021-09-01 00:00:00 -> 2022-08-01 00:00:00 (12 months)
+test: 2022-09-01 00:00:00 -> 2023-12-01 00:00:00 (16 months)
+
+Modeling note
+--------------------------------------------------------------------------------
+One SARIMAX model is fitted per district with differencing enabled through the order and seasonal_order.
+No exogenous regressors are used in this benchmark to avoid future-exogenous leakage in multi-step forecasting.
+National forecasts are obtained by summing district forecasts.
+Additional outputs include model selection tables, parameter estimates, diagnostics tests, ADF stationarity tables, diagnostic plots, and residual ACF/PACF.

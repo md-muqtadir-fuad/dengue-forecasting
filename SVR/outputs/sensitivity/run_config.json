@@ -1,0 +1,14 @@
+{
+  "input": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "SVR/outputs/sensitivity",
+  "target_col": "Log_NoOfDenguePatients",
+  "horizon": 6,
+  "use_district_ohe": true,
+  "fixed_config_json": "./SVR/outputs/svr_best_params.json",
+  "seed_list": "42",
+  "ablation_names": "full,no_climate,no_serotype,no_temporal,no_population_density",
+  "random_state": 42,
+  "shap_max_background": 80,
+  "shap_max_samples": 120,
+  "shap_nsamples": 100
+}

@@ -1,0 +1,3 @@
+district,Causal Hypothesis,Method,Source Variable,Source Base Variable,Source Input Offset (Months),Target Variable,Target Base Variable,Target Input Offset (Months),Strongest PCMCI Lag (Months),Effective Total Lag (Months),p-value,Conclusion,Effect Value
+COXS BAZAR,Avg. Temp (Lag 3) → Log(Dengue Cases),PCMCI,Avg. Temp (Lag 3),Avg. Temp,3,Log(Dengue Cases),Log(Dengue Cases),0,1,4,0.194,Not Sig.,0.21990924487990093
+COXS BAZAR,Rainfall (Lag 2) → Log(Dengue Cases),PCMCI,Rainfall (Lag 2),Rainfall,2,Log(Dengue Cases),Log(Dengue Cases),0,4,6,0.05,Not Sig.,0.2663399443418665

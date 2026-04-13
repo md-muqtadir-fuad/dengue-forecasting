@@ -1,0 +1,15 @@
+{
+  "input": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "stacked-LSTM/outputs/sensitivity",
+  "target_col": "Log_NoOfDenguePatients",
+  "horizon": 6,
+  "lookback": 6,
+  "epochs": 300,
+  "batch_size": 32,
+  "use_district_ohe": true,
+  "fixed_config_json": "./stacked-LSTM/outputs/stacked_lstm_best_configs.json",
+  "seed_list": "42",
+  "ablation_names": "full,no_climate,no_serotype,no_temporal,no_population_density",
+  "random_state": 42,
+  "loss_name": "huber"
+}

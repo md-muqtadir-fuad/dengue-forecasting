@@ -1,0 +1,36 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:           y_future_log   R-squared:                       0.239
+Model:                            OLS   Adj. R-squared:                  0.223
+Method:                 Least Squares   F-statistic:                     25.38
+Date:                Mon, 13 Apr 2026   Prob (F-statistic):           3.76e-38
+Time:                        02:49:37   Log-Likelihood:                -877.10
+No. Observations:                 462   AIC:                             1776.
+Df Residuals:                     451   BIC:                             1822.
+Df Model:                          10                                         
+Covariance Type:                  HC3                                         
+=================================================================================================
+                                    coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------
+const                          -670.4953    101.746     -6.590      0.000    -869.914    -471.077
+Year                              0.3340      0.050      6.617      0.000       0.235       0.433
+AvgTemp_lag_3                    -0.0304      0.052     -0.580      0.562      -0.133       0.072
+Month_sin                        -0.1529      0.225     -0.679      0.497      -0.594       0.289
+Month_cos                        -0.1827      0.135     -1.357      0.175      -0.447       0.081
+PopulationDensity                 0.0002   4.16e-05      4.000      0.000    8.48e-05       0.000
+MonthlyPrevailingWindDir_ENE     -2.4220      0.322     -7.517      0.000      -3.054      -1.790
+Rainfall_lag_2                   -0.0003      0.000     -1.257      0.209      -0.001       0.000
+MonthlyAvgSunshineHours_lag_1     0.2302      0.068      3.379      0.001       0.097       0.364
+denv1_lag_1                       0.0028      0.006      0.485      0.628      -0.009       0.014
+Humidity_lag_1                   -0.0426      0.027     -1.586      0.113      -0.095       0.010
+==============================================================================
+Omnibus:                       73.585   Durbin-Watson:                   0.345
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              105.608
+Skew:                           1.098   Prob(JB):                     1.17e-23
+Kurtosis:                       3.813   Cond. No.                     7.25e+06
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+[2] The condition number is large, 7.25e+06. This might indicate that there are
+strong multicollinearity or other numerical problems.

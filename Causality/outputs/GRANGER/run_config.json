@@ -1,0 +1,18 @@
+{
+  "input_path": "./data/raw/prime_dataset_model_input_with_purge.csv",
+  "output_dir": "./Causality/outputs/GRANGER",
+  "date_col": "Date",
+  "district_col": "District",
+  "mode": "district",
+  "target_col": "Log_NoOfDenguePatients",
+  "target_is_log1p": true,
+  "predictor_cols": [
+    "AvgTemp_lag_3",
+    "Rainfall_lag_2"
+  ],
+  "control_cols": [],
+  "max_lag": 6,
+  "alpha": 0.05,
+  "national_numeric_agg": "mean",
+  "national_target_agg": "sum_from_log1p"
+}

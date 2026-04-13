@@ -1,0 +1,11 @@
+Pre-lagged analysis variables detected.
+PCMCI will treat the provided columns exactly as supplied.
+Therefore, if a source variable is already shifted (for example AvgTemp_lag_3),
+the reported PCMCI lag is NOT the full temporal offset back to the original raw series.
+
+Effective total lag to target is computed as:
+    source_input_offset_months + pcmci_lag_months - target_input_offset_months
+
+Detected pre-lagged variables:
+ - AvgTemp_lag_3 (base=AvgTemp, input_offset=3 months)
+ - Rainfall_lag_2 (base=Rainfall, input_offset=2 months)

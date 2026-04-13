@@ -1,0 +1,4 @@
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:3108: RuntimeWarning: divide by zero encountered in double_scalars
+  test_statistic = np.sum(numer_resid) / np.sum(denom_resid)
+C:\Users\DELL\Desktop\venv-python\dengue-forecasting\.sarimaxVENV\lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:3108: RuntimeWarning: divide by zero encountered in double_scalars
+  test_statistic = np.sum(numer_resid) / np.sum(denom_resid)

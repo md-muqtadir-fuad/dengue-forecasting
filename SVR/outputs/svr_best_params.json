@@ -1,0 +1,92 @@
+{
+  "h1": {
+    "params": {
+      "kernel": "rbf",
+      "C": 116.59144011798311,
+      "epsilon": 0.03,
+      "gamma": 0.2,
+      "cache_size": 1000,
+      "shrinking": true,
+      "tol": 0.001,
+      "max_iter": -1
+    },
+    "outbreak_threshold": 80.00000000000001,
+    "support_vectors": 482,
+    "support_vector_ratio": 0.9525691699604744
+  },
+  "h2": {
+    "params": {
+      "kernel": "rbf",
+      "C": 18.478497974222908,
+      "epsilon": 0.03,
+      "gamma": 0.2,
+      "cache_size": 1000,
+      "shrinking": true,
+      "tol": 0.001,
+      "max_iter": -1
+    },
+    "outbreak_threshold": 84.60000000000001,
+    "support_vectors": 481,
+    "support_vector_ratio": 0.9717171717171718
+  },
+  "h3": {
+    "params": {
+      "kernel": "rbf",
+      "C": 7.3564225445964135,
+      "epsilon": 0.15,
+      "gamma": "auto",
+      "cache_size": 1000,
+      "shrinking": true,
+      "tol": 0.001,
+      "max_iter": -1
+    },
+    "outbreak_threshold": 85.69999999999997,
+    "support_vectors": 424,
+    "support_vector_ratio": 0.8760330578512396
+  },
+  "h4": {
+    "params": {
+      "kernel": "rbf",
+      "C": 18.478497974222908,
+      "epsilon": 0.03,
+      "gamma": 0.2,
+      "cache_size": 1000,
+      "shrinking": true,
+      "tol": 0.001,
+      "max_iter": -1
+    },
+    "outbreak_threshold": 86.0,
+    "support_vectors": 457,
+    "support_vector_ratio": 0.9661733615221987
+  },
+  "h5": {
+    "params": {
+      "kernel": "rbf",
+      "C": 158.48931924611142,
+      "epsilon": 0.1,
+      "gamma": "auto",
+      "cache_size": 1000,
+      "shrinking": true,
+      "tol": 0.001,
+      "max_iter": -1
+    },
+    "outbreak_threshold": 86.90000000000006,
+    "support_vectors": 412,
+    "support_vector_ratio": 0.8917748917748918
+  },
+  "h6": {
+    "params": {
+      "kernel": "rbf",
+      "C": 7.3564225445964135,
+      "epsilon": 0.03,
+      "gamma": "scale",
+      "cache_size": 1000,
+      "shrinking": true,
+      "tol": 0.001,
+      "max_iter": -1
+    },
+    "outbreak_threshold": 94.0,
+    "support_vectors": 441,
+    "support_vector_ratio": 0.9778270509977827
+  }
+}
