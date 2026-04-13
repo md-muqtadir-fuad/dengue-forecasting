@@ -1,9 +1,8 @@
 # Dengue Forecasting
-
 A comprehensive machine learning project for dengue fever outbreak forecasting using multiple predictive models and advanced data preprocessing techniques.
 
 ## Table of Contents
-- [Title](#title)
+
 - [Overview](#overview)
 - [Project Structure](#project-structure)
 - [Installation](#installation)
@@ -14,53 +13,100 @@ A comprehensive machine learning project for dengue fever outbreak forecasting u
 - [Results](#results)
 - [License](#license)
 
-## Title
-
-Tactical vs. Strategic: A Generalizable Framework for Horizon-Dependent Dengue Forecasting with a Case Study in Bangladesh
-
 ## Overview
 
 This project implements multiple machine learning models to forecast dengue cases at different time horizons (1-6 weeks ahead). The models are trained on historical dengue data and include capabilities for:
 
-- Multi-horizon forecasting
+- Multi-horizon forecasting (1-6 months ahead)
 - District-level predictions
-- Hyperparameter tuning
-- Performance evaluation across multiple metrics
+- Hyperparameter tuning and optimization
+- Comprehensive performance evaluation
 - Feature importance analysis
-- Outbreak classification metrics
+- Outbreak classification and detection
 
 ## Project Structure
 
 ```
 dengue-forecasting/
+├── Models/
+│   ├── attn-LSTM/                 # Attention-based LSTM model
+│   │   ├── attention_lstm_district.py
+│   │   ├── alstm-sen.py
+│   │   ├── outputs/
+│   │   └── README.md
+│   ├── stacked-LSTM/              # Stacked LSTM model
+│   │   ├── stacked_lstm_district.py
+│   │   ├── slstm-sen.py
+│   │   ├── outputs/
+│   │   └── README.md
+│   ├── TFT/                       # Temporal Fusion Transformer
+│   │   ├── tft_district.py
+│   │   ├── tft-sen.py
+│   │   ├── sensitivity_analysis.py
+│   │   ├── outputs/
+│   │   └── requirements.txt
+│   ├── XGBoost/                   # XGBoost gradient boosting
+│   │   ├── xgboost_district_pool.py
+│   │   ├── xgb-sen.py
+│   │   ├── outputs/
+│   │   ├── requirements.txt
+│   │   └── README.md
+│   ├── RF/                        # Random Forest
+│   │   ├── random_forest_district.py
+│   │   ├── rf-sen.py
+│   │   ├── outputs/
+│   │   └── README.md
+│   ├── CATBoost/                  # CATBoost gradient boosting
+│   │   ├── catboost_district.py
+│   │   ├── cat-sen.py
+│   │   ├── outputs/
+│   │   └── README.md
+│   ├── SVR/                       # Support Vector Regression
+│   │   ├── svr_district.py
+│   │   ├── SVR-sen.py
+│   │   ├── outputs/
+│   │   └── README.md
+│   ├── MLR/                       # Multiple Linear Regression
+│   │   ├── mlr_district.py
+│   │   ├── mlr-sen.py
+│   │   ├── outputs/
+│   │   └── README.md
+│   ├── SARIMAX/                   # SARIMAX time series
+│   │   ├── sarimax_district.py
+│   │   ├── sar-sen.py
+│   │   ├── outputs/
+│   │   ├── requirements.txt
+│   │   └── README.md
+│   └── Prophet/                   # Facebook Prophet
+│       ├── prophet_district.py
+│       ├── prop-sensitivity.py
+│       ├── pro_sensitivity_visualization.py
+│       ├── outputs/
+│       └── README.md
+├── Analysis/
+│   ├── Causality/                 # Granger causality & PCMCI analysis
+│   │   ├── granger-casuality.py
+│   │   ├── PCMCI.py
+│   │   ├── outputs/
+│   │   └── README.md
+│   └── significance_test/         # Statistical significance testing
+│       ├── main_script.py
+│       └── outputs/
 ├── data/                          # Data directory
 │   ├── raw/                       # Raw datasets
-│   │   ├── prime-dataset.csv
-│   │   └── prime_dataset_final_selected_features.csv
-│   └── output/                    # Processed output data
-├── RF/                            # Random Forest model
-│   ├── rf.py
-│   ├── outputs/                   # RF outputs and artifacts
-│   └── README.md
-├── XGBoost/                       # XGBoost model
-│   ├── xgboost.py
-│   ├── outputs/                   # XGBoost outputs and artifacts
-│   ├── requirements.txt
-│   └── README.md
-├── SARIMAX/                       # SARIMAX time series model
-│   └── sarimax.py
-├── SVR/                           # Support Vector Regression model
-│   ├── svr.py
-│   └── outputs/
-├── MLR/                           # Multiple Linear Regression model
-│   └── mlr.py
-├── attn-LSTM/                     # Attention-based LSTM model
-├── stacked-LSTM/                  # Stacked LSTM model
-├── TFT/                           # Temporal Fusion Transformer model
-├── preprocessing.ipynb            # Data preprocessing notebook
-├── format_utils.py                # Utility functions for data formatting
-├── mae-rmse.py                    # Evaluation metrics utilities
-├── LICENSE
+│   ├── dataset/                   # Processed datasets
+│   ├── district/                  # District-level data
+│   └── output/                    # Model outputs
+├── Data Utilities/
+│   ├── preprocessing.ipynb        # Data preprocessing notebook
+│   ├── format_utils.py            # Utility functions for formatting
+│   ├── mae-rmse.py                # Evaluation metrics utilities
+│   ├── dis-den-rep.py             # District-dengue representation
+│   ├── dis-selected.py            # District selection
+│   ├── district_panel.py          # District panel utilities
+│   └── synthetic-dataset.py       # Synthetic dataset generation
+├── lightning_logs/                # PyTorch Lightning logs
+├── LICENSE                        # License file
 └── README.md
 ```
 
@@ -120,88 +166,61 @@ jupyter notebook preprocessing.ipynb
 
 ## Models
 
-### 1. Random Forest (RF)
-- **File:** `RF/rf.py`
-- **Type:** Ensemble tree-based model
-- **Features:** Hyperparameter tuning, feature importance analysis
-- **Horizons:** 1-6 week ahead predictions
+The project includes seven distinct modeling approaches:
 
-### 2. XGBoost
-- **File:** `XGBoost/xgboost.py`
-- **Type:** Gradient boosting model
-- **Features:** Hyperparameter tuning, SHAP interpretation
-- **Horizons:** 1-6 week ahead predictions
+| Model | Type | Implementation |
+|-------|------|-----------------|
+| **Random Forest** | Ensemble tree-based | `RF/random_forest_district.py` |
+| **XGBoost** | Gradient boosting | `XGBoost/xgboost_district_pool.py` |
+| **SARIMAX** | Time series (ARIMA) | `SARIMAX/sarimax_district.py` |
+| **SVR** | Support Vector Regression | `SVR/svr_district.py` |
+| **MLR** | Multiple Linear Regression | `MLR/mlr_district.py` |
+| **Attention LSTM** | Deep learning (RNN) | `attn-LSTM/attention_lstm_district.py` |
+| **Stacked LSTM** | Deep learning (RNN) | `stacked-LSTM/stacked_lstm_district.py` |
+| **TFT** | Transformer-based | `TFT/tft_district.py` |
 
-### 3. SARIMAX
-- **File:** `SARIMAX/sarimax.py`
-- **Type:** Time series model
-- **Features:** Seasonal ARIMA with exogenous variables
-
-### 4. Support Vector Regression (SVR)
-- **File:** `SVR/svr.py`
-- **Type:** Kernel-based regression
-- **Features:** Non-linear prediction capability
-
-### 5. Multiple Linear Regression (MLR)
-- **File:** `MLR/mlr.py`
-- **Type:** Linear regression baseline
-- **Features:** Interpretable baseline model
-
-### 6. LSTM Models
-- **Attention LSTM:** `attn-LSTM/` - LSTM with attention mechanism
-- **Stacked LSTM:** `stacked-LSTM/` - Multi-layer LSTM architecture
-
-### 7. Temporal Fusion Transformer (TFT)
-- **File:** `TFT/`
-- **Type:** Deep learning transformer-based model
-- **Features:** Advanced temporal dependencies modeling
+Key features across models:
+- Hyperparameter tuning and optimization
+- SHAP interpretation (XGBoost)
+- Multi-horizon predictions
+- District-level analysis
 
 ## Usage
 
-### Running Random Forest Model
+### Running Models
 
-Basic run:
+All models follow a similar CLI structure:
+
 ```bash
-python RF/rf.py
+python <MODEL_DIR>/<MODEL_SCRIPT>.py [OPTIONS]
 ```
 
-With hyperparameter tuning:
-```bash
-python RF/rf.py --use_tuning --tuning_iter 200
-```
-
-Custom parameters:
-```bash
-python RF/rf.py --horizon 6 --test_frac 0.20 --val_months 12 --purge_months 12 --use_tuning
-```
-
-### Running XGBoost Model
-
-Basic run:
-```bash
-python XGBoost/xgboost.py
-```
-
-With tuning:
-```bash
-python XGBoost/xgboost.py --use_tuning
-```
-
-Custom parameters:
-```bash
-python XGBoost/xgboost.py --horizon 6 --test_frac 0.20 --val_months 12 --purge_months 12
-```
-
-### Common Parameters
-
-- `--horizon`: Forecast horizon (1-6 weeks ahead, default varies by model)
+**Common Parameters:**
+- `--horizon`: Forecast horizon in weeks (1-6, default varies by model)
 - `--test_frac`: Test set fraction (default: 0.20)
 - `--val_months`: Validation period in months (default: 12)
 - `--purge_months`: Data purge period in months (default: 12)
 - `--use_tuning`: Enable hyperparameter tuning
-- `--tuning_iter`: Number of tuning iterations (default: varies)
+- `--tuning_iter`: Number of tuning iterations
 - `--use_district_ohe`: Use one-hot encoding for districts
 - `--output_dir`: Custom output directory
+
+### Examples
+
+**Random Forest (basic):**
+```bash
+python RF/random_forest_district.py
+```
+
+**XGBoost (with tuning):**
+```bash
+python XGBoost/xgboost_district_pool.py --use_tuning --tuning_iter 200
+```
+
+**Custom parameters:**
+```bash
+python RF/random_forest_district.py --horizon 6 --test_frac 0.20 --use_tuning
+```
 
 ## Outputs
 
@@ -256,70 +275,27 @@ Results by model and horizon are available in the respective `outputs/` director
 
 See [LICENSE](LICENSE) file for details.
 
-Synthetic Dataset:
+---
+
+## Appendix
+
+### Data Generation
+
+To generate synthetic datasets:
+```bash
 python synthetic-dataset.py --input_csv ./data/raw/prime_dataset_model_input_with_purge.csv --output_csv ./data/dataset/synthetic-dataset.csv --seed 42
+```
 
+### Environment Configuration
 
-Main ENV: Python 3.11.9
+The project supports multiple Python environments based on model requirements:
 
-Package             Version
-------------------- -----------
-array-api-compat    1.14.0
-catboost            1.2.10
-certifi             2026.2.25
-cloudpickle         3.1.2
-cmdstanpy           1.3.0
-colorama            0.4.6
-contourpy           1.3.3
-cycler              0.12.1
-dcor                0.7
-et_xmlfile          2.0.0
-fonttools           4.62.1
-geopandas           1.1.3
-graphviz            0.21
-holidays            0.94
-importlib_resources 6.5.2
-joblib              1.5.3
-kiwisolver          1.5.0
-llvmlite            0.46.0
-matplotlib          3.10.8
-narwhals            2.19.0
-networkx            3.6.1
-numba               0.64.0
-numpy               2.4.3
-openpyxl            3.1.5
-packaging           26.0
-pandas              3.0.1
-patsy               1.0.2
-pillow              12.1.1
-pip                 24.0
-plotly              6.7.0
-prophet             1.3.0
-pyogrio             0.12.1
-pyparsing           3.3.2
-pyproj              3.7.2
-python-dateutil     2.9.0.post0
-regex               2026.2.28
-scikit-learn        1.8.0
-scipy               1.17.1
-seaborn             0.13.2
-setuptools          65.5.0
-shap                0.51.0
-shapely             2.1.2
-six                 1.17.0
-slicer              0.0.8
-stanio              0.5.1
-statsmodels         0.14.6
-threadpoolctl       3.6.0
-tigramite           5.2.10.1
-tqdm                4.67.3
-typing_extensions   4.15.0
-tzdata              2025.3
-xgboost             3.2.0
+- **Main Environment:** Python 3.11.9 (RF, XGBoost, CATBoost, Prophet, etc.)
+- **TFT-Specific:** Python 3.8.0 (requires PyTorch Lightning)
+- **SARIMAX-Specific:** Python 3.8.0 (requires pmdarima, statsmodels)
+- **LSTM Models:** Python 3.11.9 (TensorFlow/Keras)
 
-TFT SPECIFIC: Python 3.8.0
-Package             Version
-------------------- ------------
+For complete dependency specifications, refer to individual `requirements.txt` files in each model directory.
 aiohappyeyeballs    2.4.4
 aiohttp             3.10.11
 aiosignal           1.3.1
