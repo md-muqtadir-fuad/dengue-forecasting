@@ -296,6 +296,68 @@ The project supports multiple Python environments based on model requirements:
 - **LSTM Models:** Python 3.11.9 (TensorFlow/Keras)
 
 For complete dependency specifications, refer to individual `requirements.txt` files in each model directory.
+
+### Package Versions
+
+**Main Environment: Python 3.11.9**
+
+```bash
+array-api-compat    1.14.0
+catboost            1.2.10
+certifi             2026.2.25
+cloudpickle         3.1.2
+cmdstanpy           1.3.0
+colorama            0.4.6
+contourpy           1.3.3
+cycler              0.12.1
+dcor                0.7
+et_xmlfile          2.0.0
+fonttools           4.62.1
+geopandas           1.1.3
+graphviz            0.21
+holidays            0.94
+importlib_resources 6.5.2
+joblib              1.5.3
+kiwisolver          1.5.0
+llvmlite            0.46.0
+matplotlib          3.10.8
+narwhals            2.19.0
+networkx            3.6.1
+numba               0.64.0
+numpy               2.4.3
+openpyxl            3.1.5
+packaging           26.0
+pandas              3.0.1
+patsy               1.0.2
+pillow              12.1.1
+plotly              6.7.0
+prophet             1.3.0
+pyogrio             0.12.1
+pyparsing           3.3.2
+pyproj              3.7.2
+python-dateutil     2.9.0.post0
+regex               2026.2.28
+scikit-learn        1.8.0
+scipy               1.17.1
+seaborn             0.13.2
+setuptools          65.5.0
+shap                0.51.0
+shapely             2.1.2
+six                 1.17.0
+slicer              0.0.8
+stanio              0.5.1
+statsmodels         0.14.6
+threadpoolctl       3.6.0
+tigramite           5.2.10.1
+tqdm                4.67.3
+typing_extensions   4.15.0
+tzdata              2025.3
+xgboost             3.2.0
+```
+
+**TFT-Specific: Python 3.8.0**
+
+```bash
 aiohappyeyeballs    2.4.4
 aiohttp             3.10.11
 aiosignal           1.3.1
@@ -346,14 +408,15 @@ typing_extensions   4.13.2
 tzdata              2026.1
 yarl                1.15.2
 zipp                3.20.2
+```
 
-SARIMAX: Python 3.8.0
-Package         Version
---------------- -------
-cycler          0.12.1 
+**SARIMAX-Specific: Python 3.8.0**
+
+```bash
+cycler          0.12.1
 Cython          0.29.17
-joblib          1.0.1  
-kiwisolver      1.4.7  
+joblib          1.0.1
+kiwisolver      1.4.7
 matplotlib      3.3.4
 numpy           1.18.5
 pandas          1.1.5
@@ -372,50 +435,16 @@ six             1.17.0
 statsmodels     0.12.2
 threadpoolctl   2.1.0
 urllib3         2.2.3
+```
 
+**LSTM Models: Python 3.11.9**
 
-Prophet: Python 3.11.9
-
-Package             Version
-------------------- -----------
-cmdstanpy           1.3.0
-colorama            0.4.6
-contourpy           1.3.3
-cycler              0.12.1
-fonttools           4.62.1
-holidays            0.94
-importlib_resources 6.5.2
-joblib              1.5.3
-kiwisolver          1.5.0
-matplotlib          3.10.8
-numpy               2.4.4
-packaging           26.0
-pandas              3.0.2
-patsy               1.0.2
-pillow              12.2.0
-pip                 24.0
-prophet             1.3.0
-pyparsing           3.3.2
-python-dateutil     2.9.0.post0
-scikit-learn        1.8.0
-scipy               1.17.1
-seaborn             0.13.2
-setuptools          65.5.0
-six                 1.17.0
-stanio              0.5.1
-statsmodels         0.14.6
-threadpoolctl       3.6.0
-tqdm                4.67.3
-tzdata              2026.1
-
-LSTM: Python 3.11.9
-Package            Version
------------------- -----------
-absl-py            2.4.0      
-astunparse         1.6.3      
-certifi            2026.2.25  
-charset-normalizer 3.4.7      
-contourpy          1.3.3      
+```bash
+absl-py            2.4.0
+astunparse         1.6.3
+certifi            2026.2.25
+charset-normalizer 3.4.7
+contourpy          1.3.3
 cycler             0.12.1
 flatbuffers        25.12.19
 fonttools          4.62.1
@@ -454,7 +483,8 @@ tensorflow         2.21.0
 termcolor          3.3.0
 threadpoolctl      3.6.0
 typing_extensions  4.15.0
-tzdata             2026.1
+tzdata              2026.1
 urllib3            2.6.3
 wheel              0.46.3
 wrapt              2.1.2
+```
