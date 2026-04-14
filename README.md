@@ -12,10 +12,11 @@ A comprehensive machine learning project for dengue fever outbreak forecasting u
 - [Outputs](#outputs)
 - [Results](#results)
 - [License](#license)
+- [Appendix](#appendix)
 
 ## Overview
 
-This project implements multiple machine learning models to forecast dengue cases at different time horizons (1-6 weeks ahead). The models are trained on historical dengue data and include capabilities for:
+This project implements multiple machine learning models to forecast dengue cases at different time horizons (1-6 months ahead). The models are trained on historical dengue data and include capabilities for:
 
 - Multi-horizon forecasting (1-6 months ahead)
 - District-level predictions
@@ -26,88 +27,114 @@ This project implements multiple machine learning models to forecast dengue case
 
 ## Project Structure
 
-```
-dengue-forecasting/
-├── Models/
-│   ├── attn-LSTM/                 # Attention-based LSTM model
-│   │   ├── attention_lstm_district.py
-│   │   ├── alstm-sen.py
-│   │   ├── outputs/
-│   │   └── README.md
-│   ├── stacked-LSTM/              # Stacked LSTM model
-│   │   ├── stacked_lstm_district.py
-│   │   ├── slstm-sen.py
-│   │   ├── outputs/
-│   │   └── README.md
-│   ├── TFT/                       # Temporal Fusion Transformer
-│   │   ├── tft_district.py
-│   │   ├── tft-sen.py
-│   │   ├── sensitivity_analysis.py
-│   │   ├── outputs/
-│   │   └── requirements.txt
-│   ├── XGBoost/                   # XGBoost gradient boosting
-│   │   ├── xgboost_district_pool.py
-│   │   ├── xgb-sen.py
-│   │   ├── outputs/
-│   │   ├── requirements.txt
-│   │   └── README.md
-│   ├── RF/                        # Random Forest
-│   │   ├── random_forest_district.py
-│   │   ├── rf-sen.py
-│   │   ├── outputs/
-│   │   └── README.md
-│   ├── CATBoost/                  # CATBoost gradient boosting
-│   │   ├── catboost_district.py
-│   │   ├── cat-sen.py
-│   │   ├── outputs/
-│   │   └── README.md
-│   ├── SVR/                       # Support Vector Regression
-│   │   ├── svr_district.py
-│   │   ├── SVR-sen.py
-│   │   ├── outputs/
-│   │   └── README.md
-│   ├── MLR/                       # Multiple Linear Regression
-│   │   ├── mlr_district.py
-│   │   ├── mlr-sen.py
-│   │   ├── outputs/
-│   │   └── README.md
-│   ├── SARIMAX/                   # SARIMAX time series
-│   │   ├── sarimax_district.py
-│   │   ├── sar-sen.py
-│   │   ├── outputs/
-│   │   ├── requirements.txt
-│   │   └── README.md
-│   └── Prophet/                   # Facebook Prophet
-│       ├── prophet_district.py
-│       ├── prop-sensitivity.py
-│       ├── pro_sensitivity_visualization.py
-│       ├── outputs/
-│       └── README.md
-├── Analysis/
-│   ├── Causality/                 # Granger causality & PCMCI analysis
-│   │   ├── granger-casuality.py
-│   │   ├── PCMCI.py
-│   │   ├── outputs/
-│   │   └── README.md
-│   └── significance_test/         # Statistical significance testing
-│       ├── main_script.py
-│       └── outputs/
-├── data/                          # Data directory
-│   ├── raw/                       # Raw datasets
-│   ├── dataset/                   # Processed datasets
-│   ├── district/                  # District-level data
-│   └── output/                    # Model outputs
-├── Data Utilities/
-│   ├── preprocessing.ipynb        # Data preprocessing notebook
-│   ├── format_utils.py            # Utility functions for formatting
-│   ├── mae-rmse.py                # Evaluation metrics utilities
-│   ├── dis-den-rep.py             # District-dengue representation
-│   ├── dis-selected.py            # District selection
-│   ├── district_panel.py          # District panel utilities
-│   └── synthetic-dataset.py       # Synthetic dataset generation
-├── lightning_logs/                # PyTorch Lightning logs
-├── LICENSE                        # License file
-└── README.md
+```bash
+dengue-forecasting/                  # Root directory
+├── .gitignore
+├── README.md
+├── LICENSE
+├── synthetic-dataset.py
+├── district_panel.py
+├── dis-den-rep.py
+├── dis-selected.py
+├── mae-rmse.py
+├── preprocessing.ipynb
+├── format_utils.py
+│
+├── data/
+│   ├── dataset/
+│   │   └── synthetic-dataset.csv
+│   └── district/
+│       ├── bgd_admin0.geojson
+│       ├── bgd_admin1.geojson
+│       ├── bgd_admin2.geojson
+│       ├── bgd_admin3.geojson
+│       ├── bgd_admincapitals.geojson
+│       ├── bgd_adminlines.geojson
+│       └── bgd_adminpoints.geojson
+│
+├── CATBoost/
+│   ├── README.md
+│   ├── cat-sen.py
+│   ├── catboost_district.py
+│   └── outputs/
+│       ├── catboost_best_params.json
+│       ├── catboost_per_horizon.csv
+│       ├── catboost_split_manifest.csv
+│       ├── catboost_summary.csv
+│       ├── run_config.json
+│       ├── run_summary.txt
+│       └── sensitivity/...
+│
+├── XGBoost/
+│   ├── README.md
+│   ├── xgb-sen.py
+│   ├── xgboost_district_pool.py
+│   └── outputs/...
+│
+├── RF/
+│   ├── README.md
+│   ├── rf-sen.py
+│   ├── random_forest_district.py
+│   └── outputs/...
+│
+├── SVR/
+│   ├── README.md
+│   ├── SVR-sen.py
+│   ├── svr_district.py
+│   └── outputs/...
+│
+├── MLR/
+│   ├── README.md
+│   ├── mlr-sen.py
+│   ├── mlr_district.py
+│   └── outputs/...
+│
+├── Prophet/
+│   ├── README.md
+│   ├── prophet_district.py
+│   ├── prop-sensitivity.py
+│   ├── pro_sensitivity_visualization.py
+│   └── outputs/...
+│
+├── SARIMAX/
+│   ├── README.md
+│   ├── sar-sen.py
+│   ├── sarimax_district.py
+│   ├── requirements.txt
+│   └── outputs/...
+│
+├── TFT/
+│   ├── readme.md
+│   ├── tft_district.py
+│   ├── tft-sen.py
+│   ├── sensitivity_analysis.py
+│   ├── requirements.txt
+│   └── outputs/...
+│
+├── attn-LSTM/
+│   ├── README.md
+│   ├── alstm-sen.py
+│   ├── attention_lstm_district.py
+│   └── outputs/...
+│
+├── stacked-LSTM/
+│   ├── README.md
+│   ├── slstm-sen.py
+│   ├── stacked_lstm_district.py
+│   └── outputs/...
+│
+├── Causality/
+│   ├── README.md
+│   ├── PCMCI.py
+│   ├── granger-casuality.py
+│   └── outputs/...
+│
+└── significance_test/
+    ├── main_script.py
+    └── outputs/
+        ├── README.txt
+        ├── table_dm_absolute_error_summary.csv
+        └── table_dm_squared_error_summary.csv
 ```
 
 ## Installation
@@ -196,7 +223,7 @@ python <MODEL_DIR>/<MODEL_SCRIPT>.py [OPTIONS]
 ```
 
 **Common Parameters:**
-- `--horizon`: Forecast horizon in weeks (1-6, default varies by model)
+- `--horizon`: Forecast horizon in months (1-6, default varies by model)
 - `--test_frac`: Test set fraction (default: 0.20)
 - `--val_months`: Validation period in months (default: 12)
 - `--purge_months`: Data purge period in months (default: 12)

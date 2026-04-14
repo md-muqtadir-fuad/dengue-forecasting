@@ -1,112 +1,159 @@
-MODEL: XGBoost (Direct Multi-Horizon District-Panel)
+# XGBoost (Direct Multi-Horizon District-Panel)
 
-RUN MODE
-- Final run: ENABLED
-- Hyperparameter tuning: DISABLED
-- Reason: best settings already fixed from prior tuning
-- Forecasting mode: direct multi-horizon (separate horizon-specific forecasting logic inside one run)
+## Overview
 
-INPUT
-- Preprocessed file: prime_dataset_model_input_with_purge.csv
-- Split source: use existing split column from preprocessing
-- Required rows in input file: train + val + purge + test must all be kept
-- Target: Log_NoOfDenguePatients
-- Required core columns: District, Date, Month-year, split, Log_NoOfDenguePatients
+XGBoost model for dengue forecasting with direct multi-horizon predictions at the district level. Uses a panel structure with separate horizon-specific forecasting logic in a single model run. Best hyperparameters are fixed from prior tuning experiments.
 
-FEATURES
-- Use selected numeric predictors from the preprocessing pipeline
-- Month encoding from preprocessing: Month_sin + Month_cos
-- Horizon-specific seasonal features added inside model: TargetMonth_sin + TargetMonth_cos
-- District one-hot encoding: ENABLED by default in this file
-- No global scaling inside this XGBoost pipeline
+## Configuration
 
-TRAINING
-- Train split: used for fitting
-- Validation split: used for early stopping / model selection
-- Purge split: excluded from fitting and excluded from evaluation targets, but retained in the input file for correct horizon construction
-- Test split: final holdout only
-- Horizon loop: 1 to 6 months by default
+### Run Mode
+- **Final run:** ENABLED
+- **Hyperparameter tuning:** DISABLED
+- **Reason:** Best settings already fixed from prior tuning
+- **Forecasting mode:** Direct multi-horizon (separate horizon-specific forecasting logic inside one run)
 
-TUNING
-- Enabled: NO in final run
-- Search method: parameter sampling only when explicitly enabled
-- Best params source: fixed final configuration from prior tuning
-- Optional tuning mode remains available only for separate tuning experiments
+### Input Data
+- **Preprocessed file:** `prime_dataset_model_input_with_purge.csv`
+- **Split source:** Use existing split column from preprocessing
+- **Required rows in input file:** Train + validation + purge + test must all be kept
+- **Target column:** `Log_NoOfDenguePatients`
+- **Required core columns:** `District`, `Date`, `Month-year`, `split`, `Log_NoOfDenguePatients`
 
-OUTPUTS TO SAVE
-- fitted model files for each horizon
-- train predictions
-- validation predictions
-- test predictions
-- residual / error tables
-- per-horizon metrics
-- district-wise metrics
-- district × horizon metrics
-- outbreak classification metrics
-- split manifest
-- row-audit output
-- SHAP outputs
-- gain importance outputs
-- figures
-- xgb_best_params.json
-- run_config.json
-- run_summary.txt
-- zipped output archive
+### Features
+- **Numeric predictors:** Use selected numeric predictors from the preprocessing pipeline
+- **Month encoding:** `Month_sin` + `Month_cos` from preprocessing
+- **Horizon-specific seasonal features:** `TargetMonth_sin` + `TargetMonth_cos` added inside model
+- **District one-hot encoding:** ENABLED by default
+- **Global scaling:** NOT applied inside this XGBoost pipeline
 
-REPRODUCIBILITY
-- Random seed: 42
-- Save exact config used: YES
-- Save split manifest: YES
-- Save best-iteration / final parameter record: YES
-- Keep purge rows in source file: YES, mandatory
+### Training Settings
+- **Train split:** Used for fitting
+- **Validation split:** Used for early stopping and model selection
+- **Purge split:** Excluded from fitting and evaluation targets, but retained in input file for correct horizon construction
+- **Test split:** Final holdout only
+- **Horizon loop:** 1 to 6 months by default
 
-DEPENDENCIES
-- Install dependencies first:
-  pip install -r requirements.txt
+### Tuning
+- **Enabled:** NO in final run
+- **Search method:** Parameter sampling only when explicitly enabled
+- **Best params source:** Fixed final configuration from prior tuning
+- **Note:** Optional tuning mode remains available only for separate tuning experiments
 
-DEFAULT RUN
-- Run with default input/output:
-  python xgboost.py
+### Reproducibility
+- **Random seed:** 42
+- **Save exact config:** YES
+- **Save split manifest:** YES
+- **Save best-iteration / final parameter record:** YES
+- **Keep purge rows:** YES (mandatory)
 
-EXPLICIT OUTPUT FOLDER
-- Run with a custom output folder:
-  python xgboost.py --output_dir xgb_run_outputs
+## Installation
 
-EXPLICIT INPUT FILE
-- Run with a specific preprocessed file:
-  python xgboost.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+Install dependencies:
 
-OPTIONAL SWITCHES
-- Enable tuning:
-  python xgboost.py --use_tuning
+```bash
+pip install -r requirements.txt
+```
 
-- Change maximum forecast horizon:
-  python xgboost.py --horizon 6
+## Usage
 
-- Change target column if needed:
-  python xgboost.py --target_col Log_NoOfDenguePatients
+### Default Run
 
-- Change random seed:
-  python xgboost.py --random_state 42
+Run with default input/output:
 
-- Explicitly keep district one-hot encoding on:
-  python xgboost.py --use_district_ohe
+```bash
+python xgboost.py
+```
 
-- Explicitly turn district one-hot encoding off:
-  python xgboost.py --no_district_ohe
+### Custom Output Folder
 
-EXAMPLE FINAL RUN
-- Recommended final run:
-  python xgboost.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir xgb_run_outputs --horizon 6 --no_tuning
+Run with a custom output directory:
 
-IMPORTANT NOTE
-- Do not remove purge rows from the modeling input file.
-- Do not use old split arguments like:
-  --test_frac
-  --val_months
-  --purge_months
-  because this version takes split definitions directly from the preprocessing file.
-  
-Sesitivity:
+```bash
+python xgboost.py --output_dir xgb_run_outputs
+```
 
+### Custom Input File
+
+Run with a specific preprocessed file:
+
+```bash
+python xgboost.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+```
+
+### Optional Switches
+
+Enable hyperparameter tuning:
+
+```bash
+python xgboost.py --use_tuning
+```
+
+Change maximum forecast horizon:
+
+```bash
+python xgboost.py --horizon 6
+```
+
+Change target column:
+
+```bash
+python xgboost.py --target_col Log_NoOfDenguePatients
+```
+
+Change random seed:
+
+```bash
+python xgboost.py --random_state 42
+```
+
+Enable district one-hot encoding:
+
+```bash
+python xgboost.py --use_district_ohe
+```
+
+Disable district one-hot encoding:
+
+```bash
+python xgboost.py --no_district_ohe
+```
+
+### Recommended Final Run
+
+```bash
+python xgboost.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir xgb_run_outputs --horizon 6 --no_tuning
+```
+
+## Sensitivity Analysis
+
+```bash
 python ./XGBoost/xgb-sen.py --output_dir ./XGBoost/outputs/sensitivity --fixed_config_json ./XGBoost/outputs/xgb_best_params.json --seed_list 42 --ablation_names full,no_climate,no_serotype,no_temporal,no_population_density
+```
+
+## Outputs
+
+The model saves the following outputs:
+
+- Fitted model files for each horizon
+- Train predictions
+- Validation predictions
+- Test predictions
+- Residual / error tables
+- Per-horizon metrics
+- District-wise metrics
+- District × horizon metrics
+- Outbreak classification metrics
+- Split manifest
+- Row-audit output
+- SHAP outputs
+- Gain importance outputs
+- Figures
+- `xgb_best_params.json`
+- `run_config.json`
+- `run_summary.txt`
+- Zipped output archive
+
+## Important Notes
+
+- **Do not remove purge rows** from the modeling input file.
+- **Do not use old split arguments** such as `--test_frac`, `--val_months`, or `--purge_months`, because this version takes split definitions directly from the preprocessing file.

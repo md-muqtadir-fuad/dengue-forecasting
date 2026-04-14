@@ -1,135 +1,172 @@
-MODEL: Stacked LSTM — Direct Multi-Horizon District-Panel
+# Stacked LSTM
 
-RUN MODE
-- Final run: ENABLED
-- Hyperparameter tuning: DISABLED in final run
-- Reason: best settings already fixed from prior tuning
-- Forecasting mode: direct multi-horizon
-- Model form: pooled district-level monthly panel
-- One separate stacked LSTM model is fit for each forecast horizon
+Direct multi-horizon district-level deep learning RNN model for dengue case prediction.
 
-INPUT
-- Preprocessed file: ./data/raw/prime_dataset_model_input_with_purge.csv
-- Split source: use existing split column from preprocessing
-- Required rows in input file: train + val + purge + test must all be kept
-- Required core columns: District, Date, Month-year, split, Log_NoOfDenguePatients
-- Target: Log_NoOfDenguePatients
+## Overview
 
-FEATURES
-- Use numeric predictors from the preprocessing pipeline
-- Month encoding from preprocessing: Month_sin + Month_cos
-- Horizon-specific seasonal features added inside model: TargetMonth_sin + TargetMonth_cos
-- District one-hot encoding: ENABLED by default
-- Sequence lookback: 6 months by default
-- Model-specific scaling: ENABLED inside the script, fitted on training data only
-- No separate global preprocessing scaling file needed
+**Model Type:** Stacked LSTM (Recurrent Neural Network)  
+**Architecture:** Pooled district-level panel with one model per horizon  
+**Sequence Design:** Multi-layer LSTM with lookback window  
+**Training:** Early stopping with ReduceLROnPlateau  
+**Optimization:** Best parameters fixed from prior tuning
 
-TRAINING
-- Train split: used for fitting
-- Validation split: used for early stopping / model selection
-- Purge split: excluded from fitting and excluded from evaluation targets, but retained in the input file for correct horizon construction
-- Test split: final holdout only
-- Horizon loop: 1 to 6 months by default
-- Epochs: 300 by default
-- Batch size: 32 by default
-- Early stopping: ENABLED
-- ReduceLROnPlateau: ENABLED
+## Configuration
 
-TUNING
-- Enabled: NO in final run
-- Search method: parameter sampling only when explicitly enabled
-- Best params source: fixed final configuration from prior tuning
-- Optional tuning mode remains available only for separate tuning experiments
+### Run Mode
+- **Final Run:** ENABLED
+- **Hyperparameter Tuning:** DISABLED (best settings fixed from prior tuning)
+- **Forecasting:** Direct multi-horizon
+- **Model Form:** One stacked LSTM per forecast horizon
 
-OUTPUTS TO SAVE
-- fitted model files for each horizon
-- training history files
-- scaler artifacts for each horizon
-- train predictions
-- validation predictions
-- test predictions
-- residual / error tables
-- per-horizon metrics
-- district-wise metrics
-- district × horizon metrics
-- outbreak classification metrics
-- split manifest
-- row-audit output
-- permutation importance outputs
-- figures
-- best-params / best-config record
-- run_config.json
-- run_summary.txt
-- zipped output archive
+### Input Data
+- **Source:** `./data/raw/prime_dataset_model_input_with_purge.csv`
+- **Split:** Use existing split column from preprocessing
+- **Required Columns:**
+  - District
+  - Date
+  - Month-year
+  - split (train/val/test)
+  - Log_NoOfDenguePatients (target)
 
-REPRODUCIBILITY
-- Random seed: 42
-- Save exact config used: YES
-- Save split manifest: YES
-- Save best-epoch / final parameter record: YES
-- Keep purge rows in source file: YES, mandatory
+### Features
+- Numeric predictors from preprocessing pipeline
+- Temporal encoding: Month_sin + Month_cos (from preprocessing)
+- **Horizon-specific features:** TargetMonth_sin + TargetMonth_cos (created by model)
+- **District One-Hot Encoding:** ENABLED (default)
+- **Sequence Lookback:** 6 months (default)
+- **Model-Specific Scaling:** ENABLED (fitted on training data only)
 
-DEPENDENCIES
-- Install dependencies first:
-  pip install -r requirements.txt
+### Training Settings
+- **Training Split:** Used for model fitting
+- **Validation Split:** Early stopping / model selection
+- **Purge Split:** Excluded from fitting and evaluation (but kept in input)
+- **Test Split:** Final holdout only
+- **Horizon Loop:** 1-6 months (default)
+- **Epochs:** 300 (default)
+- **Batch Size:** 32 (default)
+- **Early Stopping:** ENABLED
+- **ReduceLROnPlateau:** ENABLED (learning rate scheduling)
 
-DEFAULT RUN
-- Run with default input/output:
-  python stacked_lstm.py
+### Reproducibility
+- **Random Seed:** 42
+- **Config Saving:** YES
+- **Split Manifest:** YES
+- **Best Epoch Record:** YES
+- **Keep Purge Rows:** YES (mandatory)
 
-EXPLICIT OUTPUT FOLDER
-- Run with a custom output folder:
-  python stacked_lstm.py --output_dir stacked-LSTM/outputs
+## Installation
 
-EXPLICIT INPUT FILE
-- Run with a specific preprocessed file:
-  python stacked_lstm.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+```bash
+pip install -r requirements.txt
+```
 
-OPTIONAL SWITCHES
-- Enable tuning:
-  python stacked_lstm.py --use_tuning
+## Usage
 
-- Change maximum forecast horizon:
-  python stacked_lstm.py --horizon 6
+### Default Run
+```bash
+python stacked_lstm_district.py
+```
 
-- Change lookback length:
-  python stacked_lstm.py --lookback 6
+### Custom Output Directory
+```bash
+python stacked_lstm_district.py --output_dir stacked-LSTM/outputs
+```
 
-- Change epochs:
-  python stacked_lstm.py --epochs 300
+### Custom Input File
+```bash
+python stacked_lstm_district.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+```
 
-- Change batch size:
-  python stacked_lstm.py --batch_size 32
+### Optional Parameters
+```bash
+# Enable tuning
+python stacked_lstm_district.py --use_tuning
 
-- Explicitly keep district one-hot encoding on:
-  python stacked_lstm.py --use_district_ohe
+# Change forecast horizon (1-6)
+python stacked_lstm_district.py --horizon 6
 
-- Explicitly turn district one-hot encoding off:
-  python stacked_lstm.py --no_district_ohe
+# Change lookback length
+python stacked_lstm_district.py --lookback 6
 
-- Change target column if needed:
-  python stacked_lstm.py --target_col Log_NoOfDenguePatients
+# Change training epochs
+python stacked_lstm_district.py --epochs 300
 
-- Change random seed:
-  python stacked_lstm.py --random_state 42
+# Change batch size
+python stacked_lstm_district.py --batch_size 32
 
-- Set loss explicitly:
-  python stacked_lstm.py --loss_name mse
-  python stacked_lstm.py --loss_name huber
+# Enable district one-hot encoding
+python stacked_lstm_district.py --use_district_ohe
 
-EXAMPLE FINAL RUN
-- Recommended final run:
-  python stacked_lstm.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir ./stacked-LSTM/outputs --horizon 6 --lookback 6 --epochs 300 --batch_size 32 --use_district_ohe --loss_name mse
+# Disable district one-hot encoding
+python stacked_lstm_district.py --no_district_ohe
 
-IMPORTANT NOTES
-- Do not remove purge rows from the modeling input file.
-- Do not use old split arguments like:
-  --test_frac
-  --val_months
-  --purge_months
-  because this version takes split definitions directly from the preprocessing file.
-- Scaling is part of the model pipeline here, which is appropriate for LSTM.
-- Always write the loss explicitly in the final run command if your script has any default inconsistency between config and CLI.
+# Specify target column
+python stacked_lstm_district.py --target_col Log_NoOfDenguePatients
 
-Sensitivity run:
-python ./stacked-LSTM/slstm-sen.py --output_dir stacked-LSTM/outputs/sensitivity --fixed_config_json ./stacked-LSTM/outputs/stacked_lstm_best_configs.json --seed_list 42 --ablation_names full,no_climate,no_serotype,no_temporal,no_population_density
+# Set random seed
+python stacked_lstm_district.py --random_state 42
+
+# Choose loss function
+python stacked_lstm_district.py --loss_name mse
+python stacked_lstm_district.py --loss_name huber
+```
+
+### Recommended Final Run
+```bash
+python stacked_lstm_district.py \
+  --input ./data/raw/prime_dataset_model_input_with_purge.csv \
+  --output_dir ./stacked-LSTM/outputs \
+  --horizon 6 \
+  --lookback 6 \
+  --epochs 300 \
+  --batch_size 32 \
+  --use_district_ohe \
+  --loss_name mse
+```
+
+## Sensitivity Analysis
+
+```bash
+python ./slstm-sen.py \
+  --output_dir stacked-LSTM/outputs/sensitivity \
+  --fixed_config_json ./stacked-LSTM/outputs/stacked_lstm_best_configs.json \
+  --seed_list 42 \
+  --ablation_names full,no_climate,no_serotype,no_temporal,no_population_density
+```
+
+## Outputs
+
+Saved to `--output_dir` (default: `outputs/`):
+
+- `stacked_lstm_model_h*.keras` - Fitted models (one per horizon)
+- `*_best_configs.json` - Best parameters configuration
+- `*_metrics_by_district.csv` - Performance by district
+- `*_metrics_by_district_horizon.csv` - Performance by district × horizon
+- `*_per_horizon.csv` - Metrics by forecast horizon
+- `*_outbreak_classification_metrics.csv` - Outbreak detection metrics
+- `*_train_predictions_long.csv` - Training predictions
+- `*_val_predictions_long.csv` - Validation predictions
+- `*_test_predictions_long.csv` - Test predictions
+- `*_test_residuals_long.csv` - Test residuals
+- `*_training_history_h*.csv` - Training history per horizon
+- `*_scaler_artifacts_h*.pkl` - Scaling artifacts per horizon
+- `run_config.json` - Exact configuration used
+- `run_summary.txt` - Run summary and statistics
+- Permutation importance outputs
+- Figures and visualizations
+- Zipped output archive
+
+## Important Notes
+
+- **Do not remove purge rows** from the modeling input file
+- **Do not use old split arguments:**
+  - `--test_frac`
+  - `--val_months`
+  - `--purge_months`
+  
+  This version takes split definitions directly from the preprocessed file
+
+- **Scaling:** Part of the model pipeline (appropriate for LSTM)
+- **Loss Function:** Always specify explicitly in final run commands if script has default inconsistencies
+- **Early Stopping:** Automatically enabled; monitors validation performance
+- **Learning Rate Scheduling:** ReduceLROnPlateau optimizes convergence

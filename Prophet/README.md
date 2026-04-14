@@ -1,135 +1,171 @@
-MODEL: Prophet — Grouped District-Level Monthly Benchmark
+# Prophet
 
-RUN MODE
-- Final run: ENABLED
-- Hyperparameter tuning: ENABLED
-- Tuning type: light validation-only tuning
-- Reason: this updated script now performs a small, defensible Prophet parameter search using validation performance
-- Forecasting mode: rolling-origin monthly forecasting
-- Model form: one Prophet model per district
-- Aggregation: district forecasts are also summed to national totals for aggregate evaluation
+Grouped district-level time series forecasting model for monthly dengue case prediction.
 
-INPUT
-- Preprocessed file: ./data/raw/prime_dataset_model_input_with_purge.csv
-- Split source: use existing split column from preprocessing
-- Required rows in input file: train + val + purge + test must all be kept
-- Required core columns: District, Date, split, Log_NoOfDenguePatients
-- Optional but supported: Month-year
-- Target: Log_NoOfDenguePatients
+## Overview
 
-FEATURES / MODEL DESIGN
-- Univariate target series per district
-- No external preprocessed predictors used as regression features
-- Month dummies: ENABLED by default
-- Purpose of month dummies: represent monthly seasonality safely for monthly data
-- Built-in yearly seasonality: disabled
-- Forecast frequency: monthly start (MS)
-- No scaling inside this Prophet pipeline
+**Model Type:** Facebook Prophet (Time Series)  
+**Architecture:** One Prophet model per district  
+**Forecasting:** Rolling-origin monthly forecasting  
+**Aggregation:** District forecasts summed to national totals  
+**Tuning:** Light validation-based parameter search (ENABLED)
 
-TRAINING
-- Train split: used as initial history
-- Validation split: used for tuning and rolling-origin validation evaluation
-- Purge split: excluded from evaluation targets, but retained in the input file for correct chronology and target coverage
-- Test split: final holdout only
-- Horizon loop: 1 to 6 months by default
-- Minimum history required before forecasting: 12 months by default
-- Forecast intervals: ENABLED
+## Configuration
 
-TUNING
-- Enabled: YES
-- Search scope:
-  - changepoint_prior_scale: [0.01, 0.05, 0.10, 0.30]
-  - seasonality_prior_scale: [1.0, 5.0, 10.0, 20.0]
-  - seasonality_mode: [additive, multiplicative]
-- Search basis: validation MAE on district-level rolling forecasts
-- Search granularity: district-specific selection
-- Test split usage in tuning: NO
-- Purge split usage in tuning: NO
+### Run Mode
+- **Final Run:** ENABLED
+- **Hyperparameter Tuning:** ENABLED (validation-only)
+- **Tuning Type:** Light defensible Prophet parameter search
+- **Forecast Frequency:** Monthly start (MS)
 
-OUTPUTS TO SAVE
-- train predictions
-- validation predictions
-- test predictions
-- district-level rolling forecast audit tables
-- split manifest
-- per-horizon metrics
-- district-wise metrics
-- national summary from summed district forecasts
-- Prophet tuning results by district
-- selected Prophet parameters by district
-- final-train model diagnostics
-- regressor coefficient tables
-- train fitted residual tables
-- ACF / PACF / Ljung-Box diagnostics outputs
-- component plots
-- figures
-- run_config.json
-- run_summary.txt
-- zipped output archive
+### Input Data
+- **Source:** `./data/raw/prime_dataset_model_input_with_purge.csv`
+- **Split:** Use existing split column from preprocessing
+- **Required Columns:**
+  - District
+  - Date
+  - split (train/val/test)
+  - Log_NoOfDenguePatients (target)
 
-REPRODUCIBILITY
-- Random seed: 42
-- Save exact config used: YES
-- Save split manifest: YES
-- Save district-level tuning results: YES
-- Keep purge rows in source file: YES, mandatory
+### Features & Model Design
+- **Model Type:** Univariate per district
+- **External Predictors:** None (univariate only)
+- **Month Dummies:** ENABLED (default) to represent monthly seasonality
+- **Yearly Seasonality:** DISABLED
+- **Scaling:** None (Prophet handles internally)
 
-DEPENDENCIES
-- Install dependencies first:
-  pip install -r requirements.txt
+### Training Settings
+- **Training Split:** Initial history for each district
+- **Validation Split:** Tuning and rolling-origin validation
+- **Purge Split:** Excluded from evaluation (but kept for chronology)
+- **Test Split:** Final holdout only
+- **Horizon Loop:** 1-6 months (default)
+- **Minimum History:** 12 months (default)
+- **Forecast Intervals:** ENABLED
 
-DEFAULT RUN
-- Run with default input/output:
-  python prophet.py
+### Tuning Parameters
+- **Search Scope:**
+  - `changepoint_prior_scale`: [0.01, 0.05, 0.10, 0.30]
+  - `seasonality_prior_scale`: [1.0, 5.0, 10.0, 20.0]
+  - `seasonality_mode`: [additive, multiplicative]
+- **Search Basis:** Validation MAE on district-level rolling forecasts
+- **Search Granularity:** District-specific parameter selection
+- **Test Split Usage:** NO
+- **Purge Split Usage:** NO
 
-EXPLICIT OUTPUT FOLDER
-- Run with a custom output folder:
-  python prophet.py --output_dir Prophet/outputs
+### Reproducibility
+- **Random Seed:** 42
+- **Config Saving:** YES
+- **Split Manifest:** YES
+- **District-Level Tuning:** YES
+- **Keep Purge Rows:** YES (mandatory)
 
-EXPLICIT INPUT FILE
-- Run with a specific preprocessed file:
-  python prophet.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+## Installation
 
-OPTIONAL SWITCHES
-- Enable tuning:
-  python prophet.py --use_tuning
+```bash
+pip install -r requirements.txt
+```
 
-- Change maximum forecast horizon:
-  python prophet.py --horizon 6
+## Usage
 
-- Change minimum history before forecasting:
-  python prophet.py --min_history_months 12
+### Default Run
+```bash
+python prophet_district.py
+```
 
-- Change interval width:
-  python prophet.py --interval_width 0.95
+### Custom Output Directory
+```bash
+python prophet_district.py --output_dir Prophet/outputs
+```
 
-- Change default changepoint prior scale:
-  python prophet.py --changepoint_prior_scale 0.05
+### Custom Input File
+```bash
+python prophet_district.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+```
 
-- Change default seasonality prior scale:
-  python prophet.py --seasonality_prior_scale 10.0
+### Optional Parameters
+```bash
+# Enable tuning
+python prophet_district.py --use_tuning
 
-- Change default seasonality mode:
-  python prophet.py --seasonality_mode additive
-  python prophet.py --seasonality_mode multiplicative
+# Change forecast horizon (1-6)
+python prophet_district.py --horizon 6
 
-- Turn month dummies off:
-  python prophet.py --no_month_dummies
+# Change minimum history (in months)
+python prophet_district.py --min_history_months 12
 
-- Change target column if needed:
-  python prophet.py --target_col Log_NoOfDenguePatients
+# Change forecast interval width
+python prophet_district.py --interval_width 0.95
 
-EXAMPLE FINAL RUN
-- Recommended final run:
-  python prophet.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir Prophet/outputs --horizon 6 --min_history_months 12 --interval_width 0.95 --use_tuning
+# Set changepoint prior scale
+python prophet_district.py --changepoint_prior_scale 0.05
 
-IMPORTANT NOTES
-- In this updated version, tuning is worth documenting because the script now actually performs a real validation-based Prophet candidate search.
-- This is still light tuning, not a large optimization pipeline.
-- Do not remove purge rows from the modeling input file.
-- Month dummies are ON by default; only use --no_month_dummies if you intentionally want to disable them.
-- This is a grouped district-level benchmark, not a pooled global Prophet model.
+# Set seasonality prior scale
+python prophet_district.py --seasonality_prior_scale 10.0
 
-sensitivity:
+# Set seasonality mode
+python prophet_district.py --seasonality_mode additive
+python prophet_district.py --seasonality_mode multiplicative
 
-python ./Prophet/prop-sensitivity.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir Prophet/outputs/sensitivity --fixed_tuning_csv ./Prophet/outputs/prophet_tuning_results.csv --ablation_names full,no_month_dummies
+# Disable month dummies
+python prophet_district.py --no_month_dummies
+
+# Specify target column
+python prophet_district.py --target_col Log_NoOfDenguePatients
+```
+
+### Recommended Final Run
+```bash
+python prophet_district.py \
+  --input ./data/raw/prime_dataset_model_input_with_purge.csv \
+  --output_dir Prophet/outputs \
+  --horizon 6 \
+  --min_history_months 12 \
+  --interval_width 0.95 \
+  --use_tuning
+```
+
+## Sensitivity Analysis
+
+```bash
+python ./prop-sensitivity.py \
+  --input ./data/raw/prime_dataset_model_input_with_purge.csv \
+  --output_dir Prophet/outputs/sensitivity \
+  --fixed_tuning_csv ./Prophet/outputs/prophet_tuning_results.csv \
+  --ablation_names full,no_month_dummies
+```
+
+## Outputs
+
+Saved to `--output_dir` (default: `outputs/`):
+
+- `*_train_predictions_long.csv` - Training predictions
+- `*_val_predictions_long.csv` - Validation predictions
+- `*_test_predictions_long.csv` - Test predictions
+- `*_metrics_by_district.csv` - Performance by district
+- `*_metrics_by_district_horizon.csv` - Performance by district × horizon
+- `*_per_horizon.csv` - Metrics by forecast horizon
+- `*_national_summary.csv` - Aggregated national metrics from summed forecasts
+- `prophet_tuning_results.csv` - Full tuning results by district
+- `*_selected_parameters_by_district.csv` - Selected Prophet parameters per district
+- `*_district_rolling_forecast_audit.csv` - Rolling forecast audit tables
+- `*_regressor_coefficients.csv` - Regressor coefficient tables
+- `*_final_train_diagnostics_summary.txt` - Diagnostics from final training
+- `*_train_fitted_residuals.csv` - Training residuals
+- `*_acf_pacf_diag_results.json` - ACF/PACF/Ljung-Box diagnostics
+- Component plots (trend, seasonality, etc.)
+- Forecast visualizations by district
+- `run_config.json` - Exact configuration used
+- `run_summary.txt` - Run summary and statistics
+- `split_manifest.csv` - Split information
+- Zipped output archive
+
+## Important Notes
+
+- **Tuning is ENABLED** by default in this version; it performs real validation-based Prophet parameter search
+- **Tuning is light**, not a large optimization pipeline
+- **Do not remove purge rows** from the modeling input file
+- **Month dummies are ON by default**; only disable with `--no_month_dummies` if intentionally needed
+- **District-level model:** One separate Prophet model per district, not a single pooled global model
+- **Univariate approach:** No external regressors used; relies on built-in Prophet seasonality and trend
+- **Forecast intervals:** Automatically included in all predictions (95% by default)

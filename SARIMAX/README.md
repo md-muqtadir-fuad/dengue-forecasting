@@ -1,162 +1,189 @@
-MODEL: SARIMAX — Grouped District-Level Monthly Benchmark
+# SARIMAX
 
-RUN MODE
-- Final run: ENABLED
-- Hyperparameter tuning: NOT APPLICABLE in the tree/deep-learning sense
-- Order search: ENABLED by default
-- Reason: this script uses a small internal candidate-order comparison, not a broad tuning search
-- Forecasting mode: rolling-origin monthly forecasting
-- Model form: one SARIMAX model per district
-- Aggregation: district forecasts are also summed to national totals for aggregate evaluation
+Grouped district-level time series autoregressive model for monthly dengue case prediction.
 
-INPUT
-- Preprocessed file: ./data/raw/prime_dataset_model_input_with_purge.csv
-- Split source: use existing split column from preprocessing
-- Required rows in input file: train + val + purge + test must all be kept
-- Required core columns: District, Date, split, Log_NoOfDenguePatients
-- Optional but supported: Month-year
-- Target: Log_NoOfDenguePatients
+## Overview
 
-FEATURES / MODEL DESIGN
-- Univariate target series per district
-- No exogenous regressors used by default
-- Reason: avoids future-exog leakage in multi-step forecasting
-- Default non-seasonal order: (1,1,1)
-- Default seasonal order: (0,1,1,12)
-- Default seasonal period: 12
-- Minimum train history before forecasting: 24 months
-- Forecasts are made on the log target, then converted back to count scale
-- Forecast clipping on log scale: ENABLED (max_pred_log_clip = 12.0)
+**Model Type:** SARIMAX (Seasonal ARIMA with Exogenous Variables)  
+**Architecture:** One SARIMAX model per district  
+**Forecasting:** Rolling-origin monthly forecasting  
+**Aggregation:** District forecasts summed to national totals  
+**Order Search:** Limited candidate comparison (ENABLED by default)
 
-TRAINING
-- Train split: used as the initial fitting history
-- Validation split: included in rolling-origin evaluation
-- Purge split: excluded from evaluation targets, but retained in the input file for correct chronology and target coverage
-- Test split: final holdout only
-- Horizon loop: 1 to 6 months by default
-- Max optimizer iterations: 200 by default
-- Residual diagnostics: ENABLED
-- Forecast intervals: ENABLED
+## Configuration
 
-ORDER SEARCH
-- Enabled: YES by default
-- Search type: limited candidate specification comparison
-- Selection basis: fit success / convergence / AIC / BIC
-- Disable only if you want to force a fixed order:
-  python sarimax.py --no_order_search
+### Run Mode
+- **Final Run:** ENABLED
+- **Hyperparameter Tuning:** NOT APPLICABLE (classical time series)
+- **Order Search:** ENABLED (limited internal candidate comparison)
+- **Forecast Mode:** Rolling-origin monthly forecasting
 
-OUTPUTS TO SAVE
-- train predictions
-- validation predictions
-- test predictions
-- district-level rolling forecast audit tables
-- split manifest
-- row-audit output
-- per-horizon metrics
-- district-wise metrics
-- regime-wise metrics
-- national summary from summed district forecasts
-- model parameter tables
-- AIC / BIC candidate comparison tables
-- residual diagnostic outputs
-- ACF / PACF figures
-- forecast interval outputs
-- figures
-- run_config.json
-- run_summary.txt
-- zipped output archive
+### Input Data
+- **Source:** `./data/raw/prime_dataset_model_input_with_purge.csv`
+- **Split:** Use existing split column from preprocessing
+- **Required Columns:**
+  - District
+  - Date
+  - split (train/val/test)
+  - Log_NoOfDenguePatients (target)
 
-REPRODUCIBILITY
-- Random seed: 42
-- Save exact config used: YES
-- Save split manifest: YES
-- Save district-level audit output: YES
-- Keep purge rows in source file: YES, mandatory
+### Features & Model Design
+- **Model Type:** Univariate per district
+- **Exogenous Variables:** None (avoids future-exog leakage in multi-step forecasting)
+- **Default Non-Seasonal Order:** (1,1,1)
+- **Default Seasonal Order:** (0,1,1,12)
+- **Seasonal Period:** 12 months
+- **Target Scale:** Log-transformed (forecasts converted back to count scale)
+- **Forecast Clipping:** ENABLED (max_pred_log_clip = 12.0)
+- **Minimum History:** 24 months required before forecasting
 
-DEPENDENCIES
-- Install dependencies first:
-  pip install -r requirements.txt
+### Order Search
+- **Enabled:** YES (by default)
+- **Search Type:** Limited candidate specification comparison
+- **Selection Basis:** Fit success / convergence / AIC / BIC
+- **Disable:** Use `--no_order_search` to force a fixed order
 
-DEFAULT RUN
-- Run with default input/output:
-  python sarimax.py
+### Training Settings
+- **Training Split:** Initial fitting history
+- **Validation Split:** Included in rolling-origin evaluation
+- **Purge Split:** Excluded from evaluation (but kept for chronology)
+- **Test Split:** Final holdout only
+- **Horizon Loop:** 1-6 months (default)
+- **Optimizer Iterations:** 200 (default)
+- **Residual Diagnostics:** ENABLED
+- **Forecast Intervals:** ENABLED
 
-EXPLICIT OUTPUT FOLDER
-- Run with a custom output folder:
-  python sarimax.py --output_dir SARIMAX/outputs
+### Reproducibility
+- **Random Seed:** 42
+- **Config Saving:** YES
+- **Split Manifest:** YES
+- **District-Level Audit:** YES
+- **Keep Purge Rows:** YES (mandatory)
 
-EXPLICIT INPUT FILE
-- Run with a specific preprocessed file:
-  python sarimax.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+## Installation
 
-OPTIONAL SWITCHES
-- Change maximum forecast horizon:
-  python sarimax.py --horizon 6
+```bash
+pip install -r requirements.txt
+```
 
-- Change target column if needed:
-  python sarimax.py --target_col Log_NoOfDenguePatients
+## Usage
 
-- Change random seed:
-  python sarimax.py --random_state 42
+### Default Run
+```bash
+python sarimax_district.py
+```
 
-- Change non-seasonal order:
-  python sarimax.py --p 1 --d 1 --q 1
+### Custom Output Directory
+```bash
+python sarimax_district.py --output_dir SARIMAX/outputs
+```
 
-- Change seasonal order:
-  python sarimax.py --P 0 --D 1 --Q 1 --seasonal_period 12
+### Custom Input File
+```bash
+python sarimax_district.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+```
 
-- Change minimum training history:
-  python sarimax.py --min_train_points 24
+### Optional Parameters
+```bash
+# Change forecast horizon (1-6)
+python sarimax_district.py --horizon 6
 
-- Change optimizer iterations:
-  python sarimax.py --maxiter 200
+# Specify target column
+python sarimax_district.py --target_col Log_NoOfDenguePatients
 
-- Change diagnostic lags:
-  python sarimax.py --diagnostics_lags 24
+# Set random seed
+python sarimax_district.py --random_state 42
 
-- Disable candidate order search and force the supplied order:
-  python sarimax.py --no_order_search
+# Change non-seasonal order (p, d, q)
+python sarimax_district.py --p 1 --d 1 --q 1
 
-EXAMPLE FINAL RUN
-- Recommended final run:
-  python sarimax.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir SARIMAX/outputs --horizon 6
+# Change seasonal order (P, D, Q, seasonal_period)
+python sarimax_district.py --P 0 --D 1 --Q 1 --seasonal_period 12
 
-EXAMPLE FIXED-ORDER RUN
-- Force one exact SARIMAX specification without candidate search:
-  python sarimax.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir SARIMAX/outputs --horizon 6 --p 1 --d 1 --q 1 --P 0 --D 1 --Q 1 --seasonal_period 12 --no_order_search
+# Change minimum training history (in months)
+python sarimax_district.py --min_train_points 24
 
-IMPORTANT NOTES
-- This script is not using feature-based tuning like XGBoost / RF / deep models.
-- The only search behavior here is the limited internal SARIMAX order comparison, which is ON by default.
-- Do not remove purge rows from the modeling input file.
-- This is a grouped district-level benchmark, not a pooled global SARIMAX model.
+# Change optimizer iterations
+python sarimax_district.py --maxiter 200
 
-Package         Version
---------------- -------
-cycler          0.12.1
-Cython          0.29.17
-joblib          1.0.1
-kiwisolver      1.4.7  
-matplotlib      3.3.4  
-numpy           1.18.5 
-pandas          1.1.5
-patsy           0.5.1
-pillow          10.4.0 
-pip             19.2.3
-pmdarima        1.8.0
-pyparsing       3.1.4
-python-dateutil 2.8.2
-pytz            2020.5
-scikit-learn    0.23.2
-scipy           1.5.4
-seaborn         0.11.1
-setuptools      41.2.0
-six             1.17.0
-statsmodels     0.12.2
-threadpoolctl   2.1.0  
-urllib3         2.2.3
+# Change diagnostic lags
+python sarimax_district.py --diagnostics_lags 24
 
-python 3.8.5
+# Disable order search and force specific order
+python sarimax_district.py --no_order_search
+```
 
-sensitivity:
-python ./SARIMAX/sar-sen.py --base_script ./SARIMAX/sarimax_district.py --fixed_config_json ./SARIMAX/outputs/run_config.json --output_dir ./SARIMAX/outputs/sensitivity
+### Recommended Final Run
+```bash
+python sarimax_district.py \
+  --input ./data/raw/prime_dataset_model_input_with_purge.csv \
+  --output_dir SARIMAX/outputs \
+  --horizon 6
+```
+
+### Fixed-Order Run
+```bash
+python sarimax_district.py \
+  --input ./data/raw/prime_dataset_model_input_with_purge.csv \
+  --output_dir SARIMAX/outputs \
+  --horizon 6 \
+  --p 1 --d 1 --q 1 \
+  --P 0 --D 1 --Q 1 \
+  --seasonal_period 12 \
+  --no_order_search
+```
+
+## Sensitivity Analysis
+
+```bash
+python ./sar-sen.py \
+  --base_script ./sarimax_district.py \
+  --fixed_config_json ./outputs/run_config.json \
+  --output_dir ./outputs/sensitivity
+```
+
+## Outputs
+
+Saved to `--output_dir` (default: `outputs/`):
+
+- `*_train_predictions_long.csv` - Training predictions
+- `*_val_predictions_long.csv` - Validation predictions
+- `*_test_predictions_long.csv` - Test predictions
+- `*_metrics_by_district.csv` - Performance by district
+- `*_metrics_by_district_horizon.csv` - Performance by district × horizon
+- `*_per_horizon.csv` - Metrics by forecast horizon
+- `*_regimewise_metrics.csv` - Metrics by regime (high/low cases)
+- `*_national_summary.csv` - Aggregated national metrics from summed forecasts
+- `*_district_rolling_forecast_audit.csv` - Rolling forecast audit tables
+- `*_model_parameters_by_district.csv` - Model parameters per district
+- `*_aic_bic_candidates_comparison.csv` - AIC/BIC candidate comparison
+- `*_residual_diagnostics.json` - Residual diagnostic statistics
+- ACF/PACF diagnostic plots
+- Forecast interval outputs
+- `split_manifest.csv` - Split information
+- `row_audit.json` - Row-level audit output
+- `run_config.json` - Exact configuration used
+- `run_summary.txt` - Run summary and statistics
+- Figures and visualizations
+- Zipped output archive
+
+## Important Notes
+
+- **No feature-based tuning** like XGBoost/RF/deep models
+- **Only search behavior:** Limited internal SARIMAX order comparison (ON by default)
+- **Do not remove purge rows** from the modeling input file
+- **District-level model:** One separate SARIMAX per district, not a single pooled global model
+- **Univariate approach:** No exogenous regressors to avoid multi-step forecasting leakage
+- **Log-scale forecasting:** Targets are log-transformed; forecasts are converted back to count scale
+
+## Environment
+
+Python 3.8.5
+
+Key packages:
+- statsmodels 0.12.2
+- pmdarima 1.8.0
+- pandas 1.1.5
+- numpy 1.18.5
+- scipy 1.5.4
+- scikit-learn 0.23.2

@@ -1,119 +1,157 @@
-MODEL: Random Forest — Direct Multi-Horizon District-Panel
+# Random Forest
 
-RUN MODE
-- Final run: ENABLED
-- Hyperparameter tuning: DISABLED in final run
-- Reason: best settings already fixed from prior tuning
-- Forecasting mode: direct multi-horizon
-- Model form: pooled district-level monthly panel
-- One separate Random Forest model is fit for each forecast horizon
+Direct multi-horizon district-level ensemble decision tree model for dengue case prediction.
 
-INPUT
-- Preprocessed file: prime_dataset_model_input_with_purge.csv
-- Split source: use existing split column from preprocessing
-- Required rows in input file: train + val + purge + test must all be kept
-- Required core columns: District, Date, Month-year, split, Log_NoOfDenguePatients
-- Target: Log_NoOfDenguePatients
+## Overview
 
-FEATURES
-- Use numeric predictors from the preprocessing pipeline
-- Month encoding from preprocessing: Month_sin + Month_cos
-- Horizon-specific seasonal features added inside model: TargetMonth_sin + TargetMonth_cos
-- District one-hot encoding: ENABLED by default
-- No global scaling inside this Random Forest pipeline
+**Model Type:** Random Forest (Ensemble Tree-Based)  
+**Architecture:** Pooled district-level monthly panel  
+**Features:** Outbreak-aware sample weighting, SHAP interpretation  
+**Forecasting:** Direct multi-horizon (1-6 months ahead)
 
-TRAINING
-- Train split: used for fitting
-- Validation split: used for model selection
-- Purge split: excluded from fitting and excluded from evaluation targets, but retained in the input file for correct horizon construction
-- Test split: final holdout only
-- Horizon loop: 1 to 6 months by default
-- Outbreak-aware sample weighting: ENABLED
+## Configuration
 
-TUNING
-- Enabled: NO in final run
-- Search method: parameter sampling only when explicitly enabled
-- Best params source: fixed final configuration from prior tuning
-- Optional tuning mode remains available only for separate tuning experiments
+### Run Mode
+- **Final Run:** ENABLED
+- **Hyperparameter Tuning:** DISABLED (best settings fixed from prior tuning)
+- **Forecasting:** Direct multi-horizon
+- **Model Form:** One separate Random Forest per forecast horizon
 
-OUTPUTS TO SAVE
-- fitted model files for each horizon
-- train predictions
-- validation predictions
-- test predictions
-- residual / error tables
-- per-horizon metrics
-- district-wise metrics
-- district × horizon metrics
-- regime-wise metrics
-- outbreak classification metrics
-- split manifest
-- row-audit output
-- SHAP outputs
-- MDI feature importance outputs
-- figures
-- rf_best_params.json
-- run_config.json
-- run_summary.txt
-- zipped output archive
+### Input Data
+- **Source:** `prime_dataset_model_input_with_purge.csv`
+- **Split:** Use existing split column from preprocessing
+- **Required Columns:**
+  - District
+  - Date
+  - Month-year
+  - split (train/val/test)
+  - Log_NoOfDenguePatients (target)
 
-REPRODUCIBILITY
-- Random seed: 42
-- Save exact config used: YES
-- Save split manifest: YES
-- Save best model-size / final parameter record: YES
-- Keep purge rows in source file: YES, mandatory
+### Features
+- Numeric predictors from preprocessing pipeline
+- Temporal encoding: Month_sin + Month_cos (from preprocessing)
+- **Horizon-specific features:** TargetMonth_sin + TargetMonth_cos (created by model)
+- **District One-Hot Encoding:** ENABLED (default)
+- **Scaling:** None (Random Forest handles internally)
 
-DEPENDENCIES
-- Install dependencies first:
-  pip install -r requirements.txt
+### Training Settings
+- **Training Split:** Used for model fitting
+- **Validation Split:** Model selection
+- **Purge Split:** Excluded from fitting and evaluation (but kept in input)
+- **Test Split:** Final holdout only
+- **Horizon Loop:** 1-6 months (default)
+- **Sample Weighting:** Outbreak-aware (ENABLED)
 
-DEFAULT RUN
-- Run with default input/output:
-  python rf.py
+### Tuning
+- **Enabled:** NO in final run
+- **Search Method:** Parameter sampling (when explicitly enabled)
+- **Best Params Source:** Fixed from prior tuning
+- **Optional Mode:** Available only for separate tuning experiments
 
-EXPLICIT OUTPUT FOLDER
-- Run with a custom output folder:
-  python rf.py --output_dir rf_run_outputs
+### Reproducibility
+- **Random Seed:** 42
+- **Config Saving:** YES
+- **Split Manifest:** YES
+- **Best Model-Size Record:** YES
+- **Keep Purge Rows:** YES (mandatory)
 
-EXPLICIT INPUT FILE
-- Run with a specific preprocessed file:
-  python rf.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+## Installation
 
-OPTIONAL SWITCHES
-- Enable tuning:
-  python rf.py --use_tuning
+```bash
+pip install -r requirements.txt
+```
 
-- Change maximum forecast horizon:
-  python rf.py --horizon 6
+## Usage
 
-- Change tuning iterations:
-  python rf.py --tuning_iter 20
+### Default Run
+```bash
+python random_forest_district.py
+```
 
-- Change target column if needed:
-  python rf.py --target_col Log_NoOfDenguePatients
+### Custom Output Directory
+```bash
+python random_forest_district.py --output_dir rf_run_outputs
+```
 
-- Change random seed:
-  python rf.py --random_state 42
+### Custom Input File
+```bash
+python random_forest_district.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+```
 
-- Explicitly keep district one-hot encoding on:
-  python rf.py --use_district_ohe
+### Optional Parameters
+```bash
+# Enable tuning
+python random_forest_district.py --use_tuning
 
-- Explicitly turn district one-hot encoding off:
-  python rf.py --no_district_ohe
+# Change forecast horizon (1-6)
+python random_forest_district.py --horizon 6
 
-EXAMPLE FINAL RUN
-- Recommended final run:
-  python rf.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir rf_run_outputs --horizon 6 --use_district_ohe
+# Change tuning iterations
+python random_forest_district.py --tuning_iter 20
 
-IMPORTANT NOTES
-- Do not remove purge rows from the modeling input file.
-- Do not use old split arguments like:
-  --test_frac
-  --val_months
-  --purge_months
-  because this version takes split definitions directly from the preprocessing file.
-- TargetMonth_sin and TargetMonth_cos are created inside the script from TargetDate for each horizon.
+# Specify target column
+python random_forest_district.py --target_col Log_NoOfDenguePatients
 
-sensitivity:
-python ./RF/rf-sen.py --fixed_config_json ./RF/outputs/rf_best_params.json --seed_list 42 --ablation_names full,no_climate,no_serotype,no_temporal,no_population_density
+# Set random seed
+python random_forest_district.py --random_state 42
+
+# Enable district one-hot encoding
+python random_forest_district.py --use_district_ohe
+
+# Disable district one-hot encoding
+python random_forest_district.py --no_district_ohe
+```
+
+### Recommended Final Run
+```bash
+python random_forest_district.py \
+  --input ./data/raw/prime_dataset_model_input_with_purge.csv \
+  --output_dir rf_run_outputs \
+  --horizon 6 \
+  --use_district_ohe
+```
+
+## Sensitivity Analysis
+
+```bash
+python ./rf-sen.py \
+  --fixed_config_json ./outputs/rf_best_params.json \
+  --seed_list 42 \
+  --ablation_names full,no_climate,no_serotype,no_temporal,no_population_density
+```
+
+## Outputs
+
+Saved to `--output_dir` (default: `outputs/`):
+
+- `rf_model_h*.joblib` - Fitted models (one per horizon)
+- `rf_best_params.json` - Best parameters configuration
+- `*_metrics_by_district.csv` - Performance by district
+- `*_metrics_by_district_horizon.csv` - Performance by district × horizon
+- `*_per_horizon.csv` - Metrics by forecast horizon
+- `*_regimewise_metrics.csv` - Metrics by regime (high/low cases)
+- `*_outbreak_classification_metrics.csv` - Outbreak detection metrics
+- `*_train_predictions_long.csv` - Training predictions
+- `*_val_predictions_long.csv` - Validation predictions
+- `*_test_predictions_long.csv` - Test predictions
+- `*_test_residuals_long.csv` - Test residuals
+- `*_feature_importance_mdi.csv` - Mean Decrease in Impurity feature importance
+- `run_config.json` - Exact configuration used
+- `run_summary.txt` - Run summary and statistics
+- SHAP feature importance outputs
+- Row audit output
+- Figures and visualizations
+- Zipped output archive
+
+## Important Notes
+
+- **Do not remove purge rows** from the modeling input file
+- **Do not use old split arguments:**
+  - `--test_frac`
+  - `--val_months`
+  - `--purge_months`
+  
+  This version takes split definitions directly from the preprocessed file
+
+- **TargetMonth_sin and TargetMonth_cos** are created inside the script from TargetDate for each horizon
+- **Outbreak-aware weighting** helps balance the importance of rare high-incidence events

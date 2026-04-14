@@ -1,126 +1,167 @@
-MODEL: Support Vector Regression (SVR) — Direct Multi-Horizon District-Panel
+# Support Vector Regression (SVR)
 
-RUN MODE
-- Final run: ENABLED
-- Hyperparameter tuning: DISABLED in final run
-- Reason: best settings already fixed from prior tuning
-- Forecasting mode: direct multi-horizon
-- Model form: pooled district-level monthly panel
-- One separate SVR model is fit for each forecast horizon
+Direct multi-horizon district-level kernel-based regression model for dengue case prediction.
 
-INPUT
-- Preprocessed file: ./data/raw/prime_dataset_model_input_with_purge.csv
-- Split source: use existing split column from preprocessing
-- Required rows in input file: train + val + purge + test must all be kept
-- Required core columns: District, Date, Month-year, split, Log_NoOfDenguePatients
-- Target: Log_NoOfDenguePatients
+## Overview
 
-FEATURES
-- Use numeric predictors from the preprocessing pipeline
-- Month encoding from preprocessing: Month_sin + Month_cos
-- Horizon-specific seasonal features added inside model: TargetMonth_sin + TargetMonth_cos
-- District one-hot encoding: ENABLED by default
-- Model-specific scaling: ENABLED inside the pipeline using StandardScaler
-- No separate global preprocessing scaling file needed
-- Default SVR kernel: RBF
+**Model Type:** Support Vector Regression (Kernel-Based)  
+**Architecture:** Pooled district-level monthly panel  
+**Kernel:** RBF (default)  
+**Features:** SHAP interpretation, permutation importance  
+**Forecasting:** Direct multi-horizon (1-6 months ahead)
 
-TRAINING
-- Train split: used for fitting
-- Validation split: used for model selection
-- Purge split: excluded from fitting and excluded from evaluation targets, but retained in the input file for correct horizon construction
-- Test split: final holdout only
-- Horizon loop: 1 to 6 months by default
-- Outbreak-aware sample weighting: NOT USED
-- Scaling is fit inside each horizon model on training data only
+## Configuration
 
-TUNING
-- Enabled: NO in final run
-- Search method: parameter sampling only when explicitly enabled
-- Best params source: fixed final configuration from prior tuning
-- Optional tuning mode remains available only for separate tuning experiments
+### Run Mode
+- **Final Run:** ENABLED
+- **Hyperparameter Tuning:** DISABLED (best settings fixed from prior tuning)
+- **Forecasting:** Direct multi-horizon
+- **Model Form:** One separate SVR per forecast horizon
 
-OUTPUTS TO SAVE
-- fitted model files for each horizon
-- train predictions
-- validation predictions
-- test predictions
-- residual / error tables
-- per-horizon metrics
-- district-wise metrics
-- district × horizon metrics
-- regime-wise metrics
-- outbreak classification metrics
-- split manifest
-- row-audit output
-- SHAP outputs
-- permutation importance outputs
-- figures
-- svr_best_params.json
-- run_config.json
-- run_summary.txt
-- zipped output archive
+### Input Data
+- **Source:** `./data/raw/prime_dataset_model_input_with_purge.csv`
+- **Split:** Use existing split column from preprocessing
+- **Required Columns:**
+  - District
+  - Date
+  - Month-year
+  - split (train/val/test)
+  - Log_NoOfDenguePatients (target)
 
-REPRODUCIBILITY
-- Random seed: 42
-- Save exact config used: YES
-- Save split manifest: YES
-- Save best parameter record: YES
-- Keep purge rows in source file: YES, mandatory
+### Features
+- Numeric predictors from preprocessing pipeline
+- Temporal encoding: Month_sin + Month_cos (from preprocessing)
+- **Horizon-specific features:** TargetMonth_sin + TargetMonth_cos (created by model)
+- **District One-Hot Encoding:** ENABLED (default)
+- **Default Kernel:** RBF
+- **Model-Specific Scaling:** ENABLED (StandardScaler fitted on training data only)
 
-DEPENDENCIES
-- Install dependencies first:
-  pip install -r requirements.txt
+### Training Settings
+- **Training Split:** Used for model fitting
+- **Validation Split:** Model selection
+- **Purge Split:** Excluded from fitting and evaluation (but kept in input)
+- **Test Split:** Final holdout only
+- **Horizon Loop:** 1-6 months (default)
+- **Sample Weighting:** Not used
+- **Scaling:** Fitted inside each horizon model on training data only
 
-DEFAULT RUN
-- Run with default input/output:
-  python svr.py
+### Tuning
+- **Enabled:** NO in final run
+- **Search Method:** Parameter sampling (when explicitly enabled)
+- **Best Params Source:** Fixed from prior tuning
+- **Optional Mode:** Available only for separate tuning experiments
 
-EXPLICIT OUTPUT FOLDER
-- Run with a custom output folder:
-  python svr.py --output_dir SVR/outputs
+### Reproducibility
+- **Random Seed:** 42
+- **Config Saving:** YES
+- **Split Manifest:** YES
+- **Best Parameter Record:** YES
+- **Keep Purge Rows:** YES (mandatory)
 
-EXPLICIT INPUT FILE
-- Run with a specific preprocessed file:
-  python svr.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+## Installation
 
-OPTIONAL SWITCHES
-- Enable tuning:
-  python svr.py --use_tuning
+```bash
+pip install -r requirements.txt
+```
 
-- Change maximum forecast horizon:
-  python svr.py --horizon 6
+## Usage
 
-- Change tuning iterations:
-  python svr.py --tuning_iter 24
+### Default Run
+```bash
+python svr_district.py
+```
 
-- Change target column if needed:
-  python svr.py --target_col Log_NoOfDenguePatients
+### Custom Output Directory
+```bash
+python svr_district.py --output_dir SVR/outputs
+```
 
-- Change random seed:
-  python svr.py --random_state 42
+### Custom Input File
+```bash
+python svr_district.py --input ./data/raw/prime_dataset_model_input_with_purge.csv
+```
 
-- Explicitly keep district one-hot encoding on:
-  python svr.py --use_district_ohe
+### Optional Parameters
+```bash
+# Enable tuning
+python svr_district.py --use_tuning
 
-- Explicitly turn district one-hot encoding off:
-  python svr.py --no_district_ohe
+# Change forecast horizon (1-6)
+python svr_district.py --horizon 6
 
-- Adjust SHAP background/sample settings:
-  python svr.py --shap_max_background 80 --shap_max_samples 120 --shap_nsamples 100
+# Change tuning iterations
+python svr_district.py --tuning_iter 24
 
-EXAMPLE FINAL RUN
-- Recommended final run:
-  python svr.py --input ./data/raw/prime_dataset_model_input_with_purge.csv --output_dir SVR/outputs --horizon 6 --use_district_ohe
+# Specify target column
+python svr_district.py --target_col Log_NoOfDenguePatients
 
-IMPORTANT NOTES
-- Do not remove purge rows from the modeling input file.
-- Do not use old split arguments like:
-  --test_frac
-  --val_months
-  --purge_months
-  because this version takes split definitions directly from the preprocessing file.
-- District one-hot encoding is ON by default in this script.
-- Scaling is part of the model pipeline here, which is appropriate for SVR.
+# Set random seed
+python svr_district.py --random_state 42
 
-sensitivity:
-python ./SVR/SVR-sen.py --output_dir SVR/outputs/sensitivity --fixed_config_json ./SVR/outputs/svr_best_params.json --seed_list 42 --ablation_names full,no_climate,no_serotype,no_temporal,no_population_density
+# Enable district one-hot encoding
+python svr_district.py --use_district_ohe
+
+# Disable district one-hot encoding
+python svr_district.py --no_district_ohe
+
+# Adjust SHAP settings
+python svr_district.py --shap_max_background 80 --shap_max_samples 120 --shap_nsamples 100
+```
+
+### Recommended Final Run
+```bash
+python svr_district.py \
+  --input ./data/raw/prime_dataset_model_input_with_purge.csv \
+  --output_dir SVR/outputs \
+  --horizon 6 \
+  --use_district_ohe
+```
+
+## Sensitivity Analysis
+
+```bash
+python ./SVR-sen.py \
+  --output_dir SVR/outputs/sensitivity \
+  --fixed_config_json ./SVR/outputs/svr_best_params.json \
+  --seed_list 42 \
+  --ablation_names full,no_climate,no_serotype,no_temporal,no_population_density
+```
+
+## Outputs
+
+Saved to `--output_dir` (default: `outputs/`):
+
+- `svr_model_h*.joblib` - Fitted models (one per horizon)
+- `svr_best_params.json` - Best parameters configuration
+- `*_metrics_by_district.csv` - Performance by district
+- `*_metrics_by_district_horizon.csv` - Performance by district × horizon
+- `*_per_horizon.csv` - Metrics by forecast horizon
+- `*_regimewise_metrics.csv` - Metrics by regime (high/low cases)
+- `*_outbreak_classification_metrics.csv` - Outbreak detection metrics
+- `*_train_predictions_long.csv` - Training predictions
+- `*_val_predictions_long.csv` - Validation predictions
+- `*_test_predictions_long.csv` - Test predictions
+- `*_test_residuals_long.csv` - Test residuals
+- `run_config.json` - Exact configuration used
+- `run_summary.txt` - Run summary and statistics
+- SHAP feature importance outputs
+- Permutation importance outputs
+- Row audit output
+- Figures and visualizations
+- Zipped output archive
+
+## Important Notes
+
+- **Do not remove purge rows** from the modeling input file
+- **Do not use old split arguments:**
+  - `--test_frac`
+  - `--val_months`
+  - `--purge_months`
+  
+  This version takes split definitions directly from the preprocessed file
+
+- **District one-hot encoding is ON by default** in this script
+- **Scaling:** Part of the model pipeline (appropriate for SVR with RBF kernel)
+- **Kernel:** RBF is default; can be modified via configuration
+- **SHAP Interpretation:** Allows understanding feature contributions to predictions
+- **Permutation Importance:** Computed for global feature importance assessment
