@@ -192,11 +192,8 @@ def pretty_column_name(col: str) -> str:
 
 
 def make_var_display(var_name: str) -> str:
-    base, offset = parse_input_offset(var_name)
-    pretty = pretty_column_name(var_name)
-    if offset == 0:
-        return pretty
-    return f"{pretty} [input lag {offset}]"
+    # do not duplicate lag text
+    return pretty_column_name(var_name)
 
 
 def build_variable_lag_metadata(vars_: List[str], target_col: str) -> pd.DataFrame:
@@ -495,20 +492,20 @@ def strongest_links_to_target(long_df: pd.DataFrame, target_col: str, predictors
 
 
 def save_graph_figure(results: Dict, vars_: List[str], tp, out_base: Path, title: str):
+    pretty_vars = [pretty_column_name(v) for v in vars_]
     try:
         tp.plot_graph(
             graph=results["graph"],
             val_matrix=results["val_matrix"],
-            var_names=vars_,
+            var_names=pretty_vars,
             save_name=str(out_base.with_suffix(".png")) if SAVE_PNG else None,
             figsize=(8, 6),
         )
         if SAVE_PDF:
-            # plot_graph writes one file at a time through save_name; call again for PDF.
             tp.plot_graph(
                 graph=results["graph"],
                 val_matrix=results["val_matrix"],
-                var_names=vars_,
+                var_names=pretty_vars,
                 save_name=str(out_base.with_suffix(".pdf")),
                 figsize=(8, 6),
             )
@@ -529,7 +526,7 @@ def save_target_heatmaps(long_df: pd.DataFrame, target_col: str, predictors: Lis
     if sub.empty:
         return
 
-    sub["source_plot_label"] = sub["source"].map(make_var_display)
+    sub["source_plot_label"] = sub["source_display"]
 
     p_pivot = sub.pivot(index="source_plot_label", columns="lag_months", values="p_value")
     v_pivot = sub.pivot(index="source_plot_label", columns="lag_months", values="val")
@@ -537,14 +534,14 @@ def save_target_heatmaps(long_df: pd.DataFrame, target_col: str, predictors: Lis
 
     plt.figure(figsize=(1.6 * max(4, p_pivot.shape[1]), 0.8 * max(3, p_pivot.shape[0]) + 2))
     sns.heatmap(nlogp, annot=p_pivot.round(4), fmt="", cmap="YlOrRd")
-    plt.title(f"PCMCI p-values to {target_col} (annotated, color = -log10 p)")
+    plt.title(f"PCMCI p-values to {pretty_column_name(target_col)} (annotated, color = -log10 p)")
     plt.xlabel("PCMCI Lag (months)")
     plt.ylabel("Source Variable")
     _save_current_fig(out_dir / f"{prefix}_target_pvalue_heatmap")
 
     plt.figure(figsize=(1.6 * max(4, v_pivot.shape[1]), 0.8 * max(3, v_pivot.shape[0]) + 2))
     sns.heatmap(v_pivot, annot=True, fmt=".3f", cmap="RdBu_r", center=0)
-    plt.title(f"PCMCI effect values to {target_col}")
+    plt.title(f"PCMCI effect values to {pretty_column_name(target_col)}")
     plt.xlabel("PCMCI Lag (months)")
     plt.ylabel("Source Variable")
     _save_current_fig(out_dir / f"{prefix}_target_val_heatmap")
@@ -642,14 +639,19 @@ def fisher_combine_by_predictor(district_link_tables: Dict[str, pd.DataFrame], t
 def save_district_strength_heatmap(district_best_df: pd.DataFrame, out_dir: Path, target_col: str):
     if district_best_df.empty:
         return
+
     plot_df = district_best_df.copy()
+    pretty_target = pretty_column_name(target_col)
+
     plot_df["Hypothesis"] = plot_df["source"].astype(str) + " → " + plot_df["target"].astype(str)
-    plot_df = plot_df[plot_df["target"] == target_col].copy()
+    plot_df = plot_df[plot_df["target"] == pretty_target].copy()
     if plot_df.empty:
         return
+
     plot_df["minus_log10_p"] = -np.log10(plot_df["p_value"].clip(lower=1e-300))
     piv = plot_df.pivot(index="district", columns="Hypothesis", values="minus_log10_p")
-    annot = plot_df.pivot(index="district", columns="Hypothesis", values="Strongest Lag")
+    annot = plot_df.pivot(index="district", columns="Hypothesis", values="Strongest PCMCI Lag (Months)")
+
     plt.figure(figsize=(1.1 * max(4, piv.shape[1]) + 2, 0.5 * max(6, piv.shape[0]) + 2))
     sns.heatmap(piv, annot=annot, fmt=".0f", cmap="YlOrRd")
     plt.title("District-wise strongest PCMCI evidence (color = -log10 p, annotation = lag)")
