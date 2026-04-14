@@ -1,3 +1,5 @@
 district,Causal Hypothesis,Method,Source Variable,Source Base Variable,Source Input Offset (Months),Target Variable,Target Base Variable,Target Input Offset (Months),Strongest PCMCI Lag (Months),Effective Total Lag (Months),p-value,Conclusion,Effect Value
 FARIDPUR,Avg. Temp (Lag 3) → Log(Dengue Cases),PCMCI,Avg. Temp (Lag 3),Avg. Temp,3,Log(Dengue Cases),Log(Dengue Cases),0,1,4,0.178,Not Sig.,0.22363478466256362
 FARIDPUR,Rainfall (Lag 2) → Log(Dengue Cases),PCMCI,Rainfall (Lag 2),Rainfall,2,Log(Dengue Cases),Log(Dengue Cases),0,5,7,0.114,Not Sig.,0.23894087125363145
+FARIDPUR,DENV-4 → Log(Dengue Cases),PCMCI,DENV-4,DENV-4,0,Log(Dengue Cases),Log(Dengue Cases),0,5,5,0.008,Sig. Non-Linear,0.3417635638968589
+FARIDPUR,DENV-1 (Lag 1) → Log(Dengue Cases),PCMCI,DENV-1 (Lag 1),DENV-1,1,Log(Dengue Cases),Log(Dengue Cases),0,4,5,0.134,Not Sig.,0.23206588202678843

@@ -1,3 +1,5 @@
 district,Causal Hypothesis,Method,Source Variable,Source Base Variable,Source Input Offset (Months),Target Variable,Target Base Variable,Target Input Offset (Months),Strongest PCMCI Lag (Months),Effective Total Lag (Months),p-value,Conclusion,Effect Value
-SYLHET,Avg. Temp (Lag 3) → Log(Dengue Cases),PCMCI,Avg. Temp (Lag 3),Avg. Temp,3,Log(Dengue Cases),Log(Dengue Cases),0,5,8,0.02,Sig. Non-Linear,0.2972118573954954
-SYLHET,Rainfall (Lag 2) → Log(Dengue Cases),PCMCI,Rainfall (Lag 2),Rainfall,2,Log(Dengue Cases),Log(Dengue Cases),0,3,5,0.01,Sig. Non-Linear,0.3187721055448599
+SYLHET,Avg. Temp (Lag 3) → Log(Dengue Cases),PCMCI,Avg. Temp (Lag 3),Avg. Temp,3,Log(Dengue Cases),Log(Dengue Cases),0,6,9,0.038,Sig. Non-Linear,0.27690171806772845
+SYLHET,Rainfall (Lag 2) → Log(Dengue Cases),PCMCI,Rainfall (Lag 2),Rainfall,2,Log(Dengue Cases),Log(Dengue Cases),0,5,7,0.016,Sig. Non-Linear,0.30063822674379015
+SYLHET,DENV-4 → Log(Dengue Cases),PCMCI,DENV-4,DENV-4,0,Log(Dengue Cases),Log(Dengue Cases),0,1,1,0.008,Sig. Non-Linear,0.33636677193740827
+SYLHET,DENV-1 (Lag 1) → Log(Dengue Cases),PCMCI,DENV-1 (Lag 1),DENV-1,1,Log(Dengue Cases),Log(Dengue Cases),0,2,3,0.002,Sig. Non-Linear,0.36504519193014895

@@ -5,3 +5,4 @@ Effective Total Lag = Source Input Offset + Granger Lag - Target Input Offset
 Detected lagged variables:
 - AvgTemp_lag_3 -> AvgTemp with input offset 3 month(s)
 - Rainfall_lag_2 -> Rainfall with input offset 2 month(s)
+- denv1_lag_1 -> denv1 with input offset 1 month(s)

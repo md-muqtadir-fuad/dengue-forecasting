@@ -1,3 +1,5 @@
 district,Causal Hypothesis,Method,Source Variable,Source Base Variable,Source Input Offset (Months),Target Variable,Target Base Variable,Target Input Offset (Months),Strongest PCMCI Lag (Months),Effective Total Lag (Months),p-value,Conclusion,Effect Value
-KHULNA,Avg. Temp (Lag 3) → Log(Dengue Cases),PCMCI,Avg. Temp (Lag 3),Avg. Temp,3,Log(Dengue Cases),Log(Dengue Cases),0,5,8,0.242,Not Sig.,0.20777864088302964
-KHULNA,Rainfall (Lag 2) → Log(Dengue Cases),PCMCI,Rainfall (Lag 2),Rainfall,2,Log(Dengue Cases),Log(Dengue Cases),0,4,6,0.078,Not Sig.,0.24859292504636749
+KHULNA,Avg. Temp (Lag 3) → Log(Dengue Cases),PCMCI,Avg. Temp (Lag 3),Avg. Temp,3,Log(Dengue Cases),Log(Dengue Cases),0,5,8,0.062,Not Sig.,0.25508341712930405
+KHULNA,Rainfall (Lag 2) → Log(Dengue Cases),PCMCI,Rainfall (Lag 2),Rainfall,2,Log(Dengue Cases),Log(Dengue Cases),0,6,8,0.434,Not Sig.,0.1821142707431293
+KHULNA,DENV-4 → Log(Dengue Cases),PCMCI,DENV-4,DENV-4,0,Log(Dengue Cases),Log(Dengue Cases),0,2,2,0.014,Sig. Non-Linear,0.303700146340464
+KHULNA,DENV-1 (Lag 1) → Log(Dengue Cases),PCMCI,DENV-1 (Lag 1),DENV-1,1,Log(Dengue Cases),Log(Dengue Cases),0,3,4,0.402,Not Sig.,0.18484526074219834

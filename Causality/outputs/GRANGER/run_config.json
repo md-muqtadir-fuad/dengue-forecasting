@@ -10,7 +10,10 @@
     "AvgTemp_lag_3",
     "Rainfall_lag_2"
   ],
-  "control_cols": [],
+  "control_cols": [
+    "denv4",
+    "denv1_lag_1"
+  ],
   "max_lag": 6,
   "alpha": 0.05,
   "national_numeric_agg": "mean",

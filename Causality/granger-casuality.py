@@ -44,7 +44,7 @@ TARGET_COL = "Log_NoOfDenguePatients"
 TARGET_IS_LOG1P = True
 
 PREDICTORS = ["AvgTemp_lag_3", "Rainfall_lag_2"]
-CONTROLS = []
+CONTROLS = ["denv4","denv1_lag_1"]
 
 MAX_LAG = 6
 ALPHA = 0.05
@@ -325,31 +325,43 @@ def build_national_series(df: pd.DataFrame, cfg: Config) -> pd.DataFrame:
 def build_district_series(df: pd.DataFrame, cfg: Config) -> Dict[str, pd.DataFrame]:
     if cfg.district_col not in df.columns:
         raise ValueError("District mode requires a district column in the CSV.")
+
     series_dict = {}
+    cols = [cfg.date_col, cfg.target_col, *cfg.predictor_cols, *cfg.control_cols]
+    cols = list(dict.fromkeys(cols))  # deduplicate
+
     for district, g in df.groupby(cfg.district_col):
         g = g.sort_values(cfg.date_col).reset_index(drop=True)
-        series_dict[district] = g[[cfg.date_col, cfg.target_col, *cfg.predictor_cols, *cfg.control_cols]].copy()
+        series_dict[district] = g[cols].copy()
+
     return series_dict
 
 
 # ---------------------------------------------------------------------
 # Conditional linear Granger
 # ---------------------------------------------------------------------
-def make_lagged_design(df: pd.DataFrame, y_col: str, x_col: str, control_cols: List[str], lag: int) -> Tuple[pd.DataFrame, List[str], List[str]]:
+def make_lagged_design(df: pd.DataFrame, y_col: str, x_col: str, control_cols: List[str], lag: int):
     work = df.copy()
-    work["y_t"] = work[y_col].astype(float)
+    work["y_t"] = pd.to_numeric(work[y_col], errors="coerce")
+
+    # remove duplicates and remove predictor from controls
+    control_cols = [c for c in dict.fromkeys(control_cols) if c != x_col]
 
     y_lag_cols, x_lag_cols, control_lag_cols = [], [], []
+
     for k in range(1, lag + 1):
         yc = f"{y_col}_lag_{k}"
         xc = f"{x_col}_lag_{k}"
-        work[yc] = work[y_col].shift(k)
-        work[xc] = work[x_col].shift(k)
+
+        work[yc] = pd.to_numeric(work[y_col], errors="coerce").shift(k)
+        work[xc] = pd.to_numeric(work[x_col], errors="coerce").shift(k)
+
         y_lag_cols.append(yc)
         x_lag_cols.append(xc)
+
         for c in control_cols:
             cc = f"{c}_lag_{k}"
-            work[cc] = work[c].shift(k)
+            work[cc] = pd.to_numeric(work[c], errors="coerce").shift(k)
             control_lag_cols.append(cc)
 
     needed = ["y_t", *y_lag_cols, *x_lag_cols, *control_lag_cols]
@@ -608,7 +620,7 @@ def main() -> None:
                 df=ts,
                 y_col=cfg.target_col,
                 x_col=predictor,
-                control_cols=list(cfg.control_cols),
+                control_cols=[c for c in cfg.control_cols if c != predictor],
                 max_lag=cfg.max_lag,
             )
             test_df.to_csv(out_dir / f"granger_national_{predictor}.csv", index=False)
@@ -628,7 +640,7 @@ def main() -> None:
                     df=ts,
                     y_col=cfg.target_col,
                     x_col=predictor,
-                    control_cols=list(cfg.control_cols),
+                    control_cols=[c for c in cfg.control_cols if c != predictor],
                     max_lag=cfg.max_lag,
                 )
                 test_df.insert(0, "district", district)

@@ -3,9 +3,9 @@ PCMCI run outputs
 Input file: ./data/raw/prime_dataset_model_input_with_purge.csv
 Mode: district
 Target: Log_NoOfDenguePatients
-Predictors: ['AvgTemp_lag_3', 'Rainfall_lag_2']
-Controls: []
-Variables included in PCMCI graph: ['Log_NoOfDenguePatients', 'AvgTemp_lag_3', 'Rainfall_lag_2']
+Predictors: ['AvgTemp_lag_3', 'Rainfall_lag_2', 'denv4', 'denv1_lag_1']
+Controls: ['denv4', 'denv1_lag_1']
+Variables included in PCMCI graph: ['Log_NoOfDenguePatients', 'AvgTemp_lag_3', 'Rainfall_lag_2', 'denv4', 'denv1_lag_1']
 tau_min=1, tau_max=6
 pc_alpha=0.05, alpha_level=0.05, fdr_method=none
 

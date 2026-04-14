@@ -52,8 +52,8 @@ SPLIT_COL = "split"
 SPLITS_TO_USE = None              # e.g. ["train", "val", "purge", "test"] or None
 
 TARGET_COL = "Log_NoOfDenguePatients"
-PREDICTORS = ["AvgTemp_lag_3", "Rainfall_lag_2"]
-CONTROLS = []                     # e.g. ["denv2", "denv3"]
+PREDICTORS = ["AvgTemp_lag_3", "Rainfall_lag_2","denv4","denv1_lag_1"]
+CONTROLS = ["denv4","denv1_lag_1"]                     # e.g. ["denv2", "denv3"]
 EXTRA_VARS = []                   # any additional variables to include in PCMCI graph
 
 TAU_MIN = 1

@@ -9,3 +9,4 @@ Effective total lag to target is computed as:
 Detected pre-lagged variables:
  - AvgTemp_lag_3 (base=AvgTemp, input_offset=3 months)
  - Rainfall_lag_2 (base=Rainfall, input_offset=2 months)
+ - denv1_lag_1 (base=denv1, input_offset=1 months)
