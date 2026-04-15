@@ -1,6 +1,8 @@
 # Dengue Forecasting
 A comprehensive machine learning project for dengue fever outbreak forecasting using multiple predictive models and advanced data preprocessing techniques.
 
+[![DOI](https://zenodo.org/badge/1185623013.svg)](https://doi.org/10.5281/zenodo.19589534)
+
 ## Table of Contents
 
 - [Overview](#overview)
