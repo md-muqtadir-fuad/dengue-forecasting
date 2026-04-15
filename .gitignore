@@ -21,6 +21,7 @@ env
 # Ignore saved models
 *.joblib
 *.json
+!*.zenodo.json
 !*best_params.json
 !run_config.json
 *.ckpt
