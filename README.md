@@ -199,9 +199,11 @@ The project includes seven distinct modeling approaches:
 |-------|------|-----------------|
 | **Random Forest** | Ensemble tree-based | `RF/random_forest_district.py` |
 | **XGBoost** | Gradient boosting | `XGBoost/xgboost_district_pool.py` |
-| **SARIMAX** | Time series (ARIMA) | `SARIMAX/sarimax_district.py` |
+| **CATBoost** | Gradient boosting (categorical) | `CATBoost/catboost_district.py` |
 | **SVR** | Support Vector Regression | `SVR/svr_district.py` |
 | **MLR** | Multiple Linear Regression | `MLR/mlr_district.py` |
+| **SARIMAX** | Time series (ARIMA) | `SARIMAX/sarimax_district.py` |
+| **Prophet** | Time series (exponential smoothing) | `Prophet/prophet_district.py` |
 | **Attention LSTM** | Deep learning (RNN) | `attn-LSTM/attention_lstm_district.py` |
 | **Stacked LSTM** | Deep learning (RNN) | `stacked-LSTM/stacked_lstm_district.py` |
 | **TFT** | Transformer-based | `TFT/tft_district.py` |
