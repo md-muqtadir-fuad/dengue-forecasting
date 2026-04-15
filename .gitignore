@@ -45,3 +45,10 @@ env
 # Python cache
 __pycache__/
 *.pyc
+
+# Temporary extracted Prophet sensitivity files
+Prophet/outputs/sensitivity_analysis/_tmp_extract/
+
+# SARIMAX sensitivity runner logs
+SARIMAX/outputs/sensitivity/**/runner_stdout.log
+SARIMAX/outputs/sensitivity/**/runner_stderr.log
