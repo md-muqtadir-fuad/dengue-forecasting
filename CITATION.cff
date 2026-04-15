@@ -15,7 +15,8 @@ authors:
     affiliation: "Department of Industrial and Production Engineering, Bangladesh University of Engineering and Technology, Dhaka, Bangladesh"
     email: "ridwanalaziz@ipe.buet.ac.bd"
 repository-code: "https://github.com/md-muqtadir-fuad/dengue-forecasting"
-url: "https://github.com/md-muqtadir-fuad/dengue-forecasting"
+url: "https://doi.org/10.5281/zenodo.19589534"
+doi: "10.5281/zenodo.19589534"
 keywords:
   - Dengue forecasting
   - Bangladesh
@@ -23,5 +24,5 @@ keywords:
   - Machine learning
   - Deep learning
   - Epidemiology
-version: "1.0.0"
+version: "1.0.1"
 date-released: "2026-04-15"
