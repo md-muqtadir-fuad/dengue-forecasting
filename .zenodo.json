@@ -1,0 +1,37 @@
+{
+  "title": "dengue-forecasting",
+  "description": "Code and reproducibility outputs for horizon-dependent dengue forecasting in Bangladesh using statistical, machine learning, and deep learning models.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Fuad, Md. Muqtadir",
+      "affiliation": "Department of Industrial and Production Engineering, Bangladesh University of Engineering and Technology, Dhaka, Bangladesh"
+    },
+    {
+      "name": "Milki, Md. Sajib",
+      "affiliation": "Department of Industrial and Production Engineering, Bangladesh University of Engineering and Technology, Dhaka, Bangladesh"
+    },
+    {
+      "name": "Al Aziz, Ridwan",
+      "affiliation": "Department of Industrial and Production Engineering, Bangladesh University of Engineering and Technology, Dhaka, Bangladesh",
+      "orcid": ""
+    }
+  ],
+  "keywords": [
+    "Dengue forecasting",
+    "Bangladesh",
+    "Time series",
+    "Machine learning",
+    "Deep learning",
+    "Epidemiology"
+  ],
+  "access_right": "open",
+  "license": "other-open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/md-muqtadir-fuad/dengue-forecasting",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

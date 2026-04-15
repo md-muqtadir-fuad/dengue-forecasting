@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the software archive and the associated manuscript."
+title: "dengue-forecasting"
+abstract: "Code and reproducibility outputs for horizon-dependent dengue forecasting in Bangladesh using statistical, machine learning, and deep learning models."
+type: software
+authors:
+  - family-names: "Fuad"
+    given-names: "Md. Muqtadir"
+    affiliation: "Department of Industrial and Production Engineering, Bangladesh University of Engineering and Technology, Dhaka, Bangladesh"
+  - family-names: "Milki"
+    given-names: "Md. Sajib"
+    affiliation: "Department of Industrial and Production Engineering, Bangladesh University of Engineering and Technology, Dhaka, Bangladesh"
+  - family-names: "Al Aziz"
+    given-names: "Ridwan"
+    affiliation: "Department of Industrial and Production Engineering, Bangladesh University of Engineering and Technology, Dhaka, Bangladesh"
+    email: "ridwanalaziz@ipe.buet.ac.bd"
+repository-code: "https://github.com/md-muqtadir-fuad/dengue-forecasting"
+url: "https://github.com/md-muqtadir-fuad/dengue-forecasting"
+keywords:
+  - Dengue forecasting
+  - Bangladesh
+  - Time series
+  - Machine learning
+  - Deep learning
+  - Epidemiology
+version: "1.0.0"
+date-released: "2026-04-15"
